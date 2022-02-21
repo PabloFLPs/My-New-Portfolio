@@ -4,9 +4,13 @@ import { Disclosure } from '@headlessui/react'
 import { MdOutlineComputer, MdOutlineMenu, MdClose } from "react-icons/md";
 
 export default function NavigationBar() {
+  interface IDisclosure {
+    open: boolean,
+  }
+
   return (
     <Disclosure as="nav" className="bg-dark shadow text-white">
-      {({ open }:any) => (
+      {({ open } : IDisclosure) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex justify-between h-16">
