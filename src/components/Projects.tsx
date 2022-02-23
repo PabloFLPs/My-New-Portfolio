@@ -31,7 +31,7 @@ const projects = [
     // More people...
 ]
   
-  export default function Projects() {
+export default function Projects() {
     return (
         <>
             <div className="pb-5 border-green-200 bg-dark text-white px-12 py-6">
@@ -52,7 +52,6 @@ const projects = [
                     className="relative rounded-lg border-none bg-dark-gray px-6 py-5 shadow-sm flex items-center space-x-3 focus-within:ring-1 focus-within:ring-green-200"
                 >
                     <div className="flex-shrink-0">
-                    <img className="h-10 w-10 rounded-full" src={project.imageUrl} alt="" />
                     </div>
                     <div className="flex-1 min-w-0">
                     <a href={project.href} className="focus:outline-none">
@@ -66,5 +65,4 @@ const projects = [
             </div>
         </>
     )
-  }
-  
+}
