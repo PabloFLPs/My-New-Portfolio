@@ -50,7 +50,7 @@ export default function Example() {
             </dl>
           </div>
         </div>
-        <div className="bg-dark border-none rounded-md py-16 px-4 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
+        <div className="bg-dark border-none rounded-md py-16 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
           <div className="max-w-lg mx-auto lg:max-w-none">
             <form action="#" method="POST" onSubmit={(event: React.FormEvent<HTMLFormElement>) => event.preventDefault()} className="grid grid-cols-1 gap-y-6">
               <div>
@@ -62,7 +62,7 @@ export default function Example() {
                   name="full-name"
                   id="full-name"
                   autoComplete="name"
-                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 rounded-md"
                   placeholder="Full name"
                 />
               </div>
@@ -75,7 +75,7 @@ export default function Example() {
                   name="email"
                   type="email"
                   autoComplete="email"
-                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 rounded-md"
                   placeholder="Email"
                 />
               </div>
@@ -88,7 +88,7 @@ export default function Example() {
                   name="phone"
                   id="phone"
                   autoComplete="tel"
-                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 rounded-md"
                   placeholder="Phone"
                 />
               </div>
@@ -100,7 +100,7 @@ export default function Example() {
                   id="message"
                   name="message"
                   rows={4}
-                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
+                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 rounded-md"
                   placeholder="Message"
                   defaultValue={''}
                 />
@@ -108,7 +108,7 @@ export default function Example() {
               <div>
                 <button
                   type="submit"
-                  className="inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-dark bg-clear-brown hover:bg-opacity-80"
+                  className="inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-clear-brown hover:bg-opacity-80 transition-all duration-300"
                 >
                   Submit
                 </button>
