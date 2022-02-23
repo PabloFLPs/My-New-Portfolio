@@ -34,11 +34,11 @@ const projects = [
 export default function Projects() {
     return (
         <>
-            <div className="pb-5 border-green-200 bg-dark text-white px-12 py-6">
+            <div className="pb-5 border-clear-brown bg-dark text-white px-12 py-6">
             <div className="sm:flex sm:justify-between sm:items-baseline">
                 <div className="sm:w-0 sm:flex-1">
                 <h1 id="message-heading" className="text-2xl font-medium">
-                    Full-Stack <span className="text-green-200">Developer</span>
+                    Full-Stack <span className="text-clear-brow">Developer</span>
                 </h1>
                 <p className="mt-1 text-sm text-gray-500 truncate">Checkout and Payments Team</p>
                 </div>
@@ -49,14 +49,14 @@ export default function Projects() {
                 {projects.map((project) => (
                 <div
                     key={project.email}
-                    className="relative rounded-lg border-none bg-dark-gray px-6 py-5 shadow-sm flex items-center space-x-3 focus-within:ring-1 focus-within:ring-green-200"
+                    className="relative rounded-lg border-none bg-dark-gray px-6 py-5 shadow-sm flex items-center space-x-3 focus-within:ring-1 focus-within:ring-clear-brown"
                 >
                     <div className="flex-shrink-0">
                     </div>
                     <div className="flex-1 min-w-0">
                     <a href={project.href} className="focus:outline-none">
                         <span className="absolute inset-0" aria-hidden="true" />
-                        <p className="text-sm font-medium text-green-200">{project.name}</p>
+                        <p className="text-sm font-medium text-clear-brown">{project.name}</p>
                         <p className="text-sm truncate">{project.role}</p>
                     </a>
                     </div>

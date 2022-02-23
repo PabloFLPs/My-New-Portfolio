@@ -21,7 +21,7 @@ export default function AboutMe() {
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="relative">
                     <h2 className="text-center text-3xl font-bold">
-                        Web <span className="text-green-200">Developer</span>
+                        Web <span className="text-clear-brown">Developer</span>
                     </h2>
                     <blockquote className="mt-10">
                     <div className="max-w-3xl mx-auto text-center text-2xl leading-9 font-medium text-gray-900">
@@ -55,7 +55,7 @@ export default function AboutMe() {
                         <blockquote>
                         <div>
                             <svg
-                            className="h-12 w-12 text-green-200"
+                            className="h-12 w-12 text-clear-brown"
                             fill="currentColor"
                             viewBox="0 0 32 32"
                             aria-hidden="true"
@@ -68,7 +68,7 @@ export default function AboutMe() {
                             </p>
                         </div>
                         <footer className="mt-6">
-                            <p className="text-base font-medium text-green-200">Judith Black</p>
+                            <p className="text-base font-medium text-clear-brown">Judith Black</p>
                             <p className="text-base font-medium text-white">CEO at PureInsights</p>
                         </footer>
                         </blockquote>
