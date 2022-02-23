@@ -15,6 +15,7 @@
   ```
 */
 
+import React from "react";
 import { RiPhoneFill, RiMailFill } from "react-icons/ri";
 
 export default function Example() {
@@ -51,7 +52,7 @@ export default function Example() {
         </div>
         <div className="bg-dark border-none rounded-md py-16 px-4 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
           <div className="max-w-lg mx-auto lg:max-w-none">
-            <form action="#" method="POST" className="grid grid-cols-1 gap-y-6">
+            <form action="#" method="POST" onSubmit={(event: React.FormEvent<HTMLFormElement>) => event.preventDefault()} className="grid grid-cols-1 gap-y-6">
               <div>
                 <label htmlFor="full-name" className="sr-only">
                   Full name
