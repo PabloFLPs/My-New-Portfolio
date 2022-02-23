@@ -15,7 +15,9 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+  ],
   purge: {
     // Filenames to scan for classes
     content: [
