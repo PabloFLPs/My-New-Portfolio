@@ -52,11 +52,11 @@ const navigation = [
   
 export default function Footer() {
     return (
-        <footer className="bg-dark text-white">
+        <footer className="bg-dark-gray text-white">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
             <div className="flex justify-center space-x-6 md:order-2">
             {navigation.map((item) => (
-                <a key={item.name} href={item.href} className="hover:text-green-200">
+                <a key={item.name} href={item.href} className="hover:text-clear-brown">
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="h-6 w-6" aria-hidden="true" />
                 </a>

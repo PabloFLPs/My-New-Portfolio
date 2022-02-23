@@ -9,7 +9,7 @@ export default function NavigationBar() {
   }
 
   return (
-    <Disclosure as="nav" className="bg-dark shadow text-white">
+    <Disclosure as="nav" className="bg-dark-gray shadow text-white sticky top-0 z-50">
       {({ open } : IDisclosure) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
