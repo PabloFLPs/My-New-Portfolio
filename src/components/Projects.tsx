@@ -34,7 +34,7 @@ const projects = [
 export default function Projects() {
     return (
         <>
-            <div className="pb-5 border-clear-brown bg-dark text-white px-12 py-6">
+            <div className="pb-12 border-clear-brown bg-dark text-white px-20 py-12 lg:px-40">
             <div className="sm:flex sm:justify-between sm:items-baseline">
                 <div className="sm:w-0 sm:flex-1">
                 <h1 id="message-heading" className="text-2xl font-medium">
@@ -45,7 +45,7 @@ export default function Projects() {
             </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 bg-dark text-white px-12 py-6">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:px-60 bg-dark text-white px-12">
                 {projects.map((project) => (
                 <div
                     key={project.email}
@@ -57,7 +57,7 @@ export default function Projects() {
                     <a href={project.href} className="focus:outline-none">
                         <span className="absolute inset-0" aria-hidden="true" />
                         <p className="text-sm font-medium text-clear-brown">{project.name}</p>
-                        <p className="text-sm truncate">{project.role}</p>
+                        <p className="text-sm">{project.role}</p>
                     </a>
                     </div>
                 </div>
