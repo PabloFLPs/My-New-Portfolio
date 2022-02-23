@@ -21,7 +21,7 @@ export default function Hero() {
               <div className="rounded-md shadow">
                 <a
                   href="#"
-                  className="w-full flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-md text-dark-gray bg-clear-brown hover:bg-dark-gray md:py-4 md:text-lg md:px-10"
+                  className="w-full flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-clear-brown hover:opacity-80 md:py-4 md:text-lg md:px-10 transition-all duration-300"
                 >
                   Know Me
                 </a>
@@ -29,7 +29,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="relative w-full h-40 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
+        <div className="relative w-full h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
           <div aria-hidden="true" className="absolute bg-gradient-to-b from-dark to-transparent z-10  lg:h-full lg:w-72 lg:bg-gradient-to-r"></div>
           <img
             className="absolute opacity-60 inset-0 w-full h-full object-cover"
