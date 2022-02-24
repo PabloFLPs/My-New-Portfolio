@@ -16,7 +16,7 @@ export default function NavigationBar() {
             <div className="relative flex justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button */}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-clear-brown">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-light-brown">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <MdClose className="block h-6 w-6" aria-hidden="true" />
@@ -41,31 +41,31 @@ export default function NavigationBar() {
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                   <a
                     href="#"
-                    className="border-transparent hover:border-clear-brown hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all duration-500"
+                    className="border-transparent hover:border-light-brown hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all duration-500"
                   >
                     Home
                   </a>
                   <a
                     href="#"
-                    className="border-transparent hover:border-clear-brown hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all duration-500"
+                    className="border-transparent hover:border-light-brown hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all duration-500"
                   >
                     Portfolio
                   </a>
                   <a
                     href="#"
-                    className="border-transparent hover:border-clear-brown hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all duration-500"
+                    className="border-transparent hover:border-light-brown hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all duration-500"
                   >
                     Resume
                   </a>
                   <a
                     href="#"
-                    className="border-transparent hover:border-clear-brown hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all duration-500"
+                    className="border-transparent hover:border-light-brown hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all duration-500"
                   >
                     About
                   </a>
                   <a
                     href="#"
-                    className="border-transparent hover:border-clear-brown hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all duration-500"
+                    className="border-transparent hover:border-light-brown hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all duration-500"
                   >
                     Contact
                   </a>
@@ -80,7 +80,7 @@ export default function NavigationBar() {
               <Disclosure.Button
                 as="a"
                 href="#"
-                className="bg-dark-gray border-clear-brown text-clear-brown block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                className="bg-dark-gray border-light-brown text-light-brown block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
               >
                 Home
               </Disclosure.Button>
