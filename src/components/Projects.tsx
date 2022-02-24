@@ -45,11 +45,11 @@ export default function Projects() {
             </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:px-60 bg-dark text-white px-12">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:px-60 bg-dark text-white px-12 pb-6">
                 {projects.map((project) => (
                 <div
                     key={project.email}
-                    className="relative rounded-lg border-none bg-dark-gray px-6 py-5 shadow-sm flex items-center space-x-3 focus-within:ring-1 focus-within:ring-light-brown"
+                    className="relative rounded-lg border-none bg-dark-gray px-6 py-5 shadow-sm flex items-center space-x-3 hover:ring-1 hover:ring-light-brown transition-all duration-300"
                 >
                     <div className="flex-shrink-0">
                     </div>
