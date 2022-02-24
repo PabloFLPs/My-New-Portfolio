@@ -80,35 +80,35 @@ export default function NavigationBar() {
               <Disclosure.Button
                 as="a"
                 href="#"
-                className="bg-dark-gray border-light-brown text-light-brown block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                className="border-transparent text-white hover:border-light-brown hover:text-light-brown block pl-3 pr-4 py-2 border-l-4 text-base font-medium transition-all duration-300"
               >
                 Home
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="#"
-                className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                className="border-transparent text-white hover:border-light-brown hover:text-light-brown block pl-3 pr-4 py-2 border-l-4 text-base font-medium transition-all duration-300"
               >
                 Portfolio
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="#"
-                className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                className="border-transparent text-white hover:border-light-brown hover:text-light-brown block pl-3 pr-4 py-2 border-l-4 text-base font-medium transition-all duration-300"
               >
                 Resume
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="#"
-                className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                className="border-transparent text-white hover:border-light-brown hover:text-light-brown block pl-3 pr-4 py-2 border-l-4 text-base font-medium transition-all duration-300"
               >
                 About
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="#"
-                className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                className="border-transparent text-white hover:border-light-brown hover:text-light-brown block pl-3 pr-4 py-2 border-l-4 text-base font-medium transition-all duration-300"
               >
                 Contact Me
               </Disclosure.Button>
