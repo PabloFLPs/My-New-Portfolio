@@ -20,14 +20,14 @@ import { RiPhoneFill, RiMailFill } from "react-icons/ri";
 
 export default function Example() {
   return (
-    <div className="relative bg-dark text-white px-12 py-16">
+    <div className="relative bg-dark text-white px-12 py-10">
       <div className="absolute inset-0">
         <div className="absolute inset-y-0 left-0 w-1/2 bg-gray-50" />
       </div>
       <div className="relative max-w-7xl mx-auto lg:grid lg:grid-cols-5">
         <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
           <div className="max-w-lg mx-auto">
-            <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">Get in <span className="text-green-200">Touch</span></h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">Get in <span className="text-light-brown">Touch</span></h2>
             <p className="mt-3 text-lg leading-6 text-gray-500">
               Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus
               arcu.
@@ -36,21 +36,21 @@ export default function Example() {
               <div className="mt-6">
                 <dt className="sr-only">Phone number</dt>
                 <dd className="flex">
-                  <RiPhoneFill className="flex-shrink-0 h-6 w-6 text-green-200" aria-hidden="true" />
+                  <RiPhoneFill className="flex-shrink-0 h-6 w-6 text-light-brown" aria-hidden="true" />
                   <span className="ml-3">+1 (555) 123-4567</span>
                 </dd>
               </div>
               <div className="mt-3">
                 <dt className="sr-only">Email</dt>
                 <dd className="flex">
-                  <RiMailFill className="flex-shrink-0 h-6 w-6 text-green-200" aria-hidden="true" />
+                  <RiMailFill className="flex-shrink-0 h-6 w-6 text-light-brown" aria-hidden="true" />
                   <span className="ml-3">support@example.com</span>
                 </dd>
               </div>
             </dl>
           </div>
         </div>
-        <div className="bg-dark border-none rounded-md py-16 px-4 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
+        <div className="bg-dark border-none rounded-md py-16 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
           <div className="max-w-lg mx-auto lg:max-w-none">
             <form action="#" method="POST" onSubmit={(event: React.FormEvent<HTMLFormElement>) => event.preventDefault()} className="grid grid-cols-1 gap-y-6">
               <div>
@@ -62,7 +62,7 @@ export default function Example() {
                   name="full-name"
                   id="full-name"
                   autoComplete="name"
-                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 rounded-md"
                   placeholder="Full name"
                 />
               </div>
@@ -75,7 +75,7 @@ export default function Example() {
                   name="email"
                   type="email"
                   autoComplete="email"
-                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 rounded-md"
                   placeholder="Email"
                 />
               </div>
@@ -88,7 +88,7 @@ export default function Example() {
                   name="phone"
                   id="phone"
                   autoComplete="tel"
-                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 rounded-md"
                   placeholder="Phone"
                 />
               </div>
@@ -100,7 +100,7 @@ export default function Example() {
                   id="message"
                   name="message"
                   rows={4}
-                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
+                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 rounded-md"
                   placeholder="Message"
                   defaultValue={''}
                 />
@@ -108,7 +108,7 @@ export default function Example() {
               <div>
                 <button
                   type="submit"
-                  className="inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-dark bg-green-200 hover:bg-opacity-80"
+                  className="inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-light-brown hover:bg-opacity-80 transition-all duration-300"
                 >
                   Submit
                 </button>
