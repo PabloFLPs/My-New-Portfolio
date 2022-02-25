@@ -17,11 +17,11 @@
 export default function AboutMe() {
     return (
         <>
-            <section className="py-6 bg-dark text-white overflow-hidden md:py-12 lg:py-16">
+            <section id="About" className="py-6 bg-dark text-white overflow-hidden md:py-12 lg:pt-24">
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="relative">
                     <h2 className="text-center text-3xl font-bold">
-                        Front-End <span className="text-green-200">Developer</span>
+                        Front-End <span className="text-light-brown">Developer</span>
                     </h2>
                     <blockquote className="mt-10">
                     <div className="max-w-3xl mx-auto text-center text-lg leading-7 font-medium text-gray-900">
@@ -43,7 +43,7 @@ export default function AboutMe() {
                 <div className="pb-16 bg-dark-gray lg:pb-0 lg:z-10 lg:relative">
                 <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:gap-8">
                     <div className="relative lg:-my-8">
-                    <div aria-hidden="true" className="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden" />
+                    <div aria-hidden="true" className="absolute inset-x-0 top-0 h-1/2 bg-dark lg:hidden" />
                     <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:p-0 lg:h-full">
                         <div className="aspect-w-10 aspect-h-6 rounded-xl shadow-xl overflow-hidden sm:aspect-w-16 sm:aspect-h-7 lg:aspect-none lg:h-full">
                         <img
@@ -64,7 +64,7 @@ export default function AboutMe() {
                             </p>
                         </div>
                         <footer className="mt-6">
-                            <p className="text-base font-medium text-green-200">Pablo Felipe</p>
+                            <p className="text-base font-medium text-light-brown">Pablo Felipe</p>
                             <p className="text-base font-medium text-white">Web Developer at <a href="https://lecode.dev/" className="text-light-brown hover:opacity-80">LeCode</a></p>
                         </footer>
                         </blockquote>
