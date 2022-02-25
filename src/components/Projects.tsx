@@ -34,7 +34,7 @@ const projects = [
 export default function Projects() {
     return (
         <>
-            <div className="pb-12 border-light-brown bg-dark text-white px-20 py-12 lg:px-40">
+            <div id="Projects" className="border-light-brown bg-dark text-white px-20 pt-24 lg:px-40">
             <div className="sm:flex sm:justify-between sm:items-baseline">
                 <div className="sm:w-0 sm:flex-1">
                 <h1 id="message-heading" className="text-2xl font-medium">

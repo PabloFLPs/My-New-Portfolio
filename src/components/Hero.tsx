@@ -20,7 +20,7 @@ export default function Hero() {
             <div className="mt-6 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
                 <a
-                  href="#"
+                  href="#About"
                   className="w-full flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-light-brown hover:opacity-80 md:py-4 md:text-lg md:px-10 transition-all duration-300"
                 >
                   Know Me
