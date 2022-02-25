@@ -37,10 +37,10 @@ export default function Projects() {
             <div className="pb-5 border-green-200 bg-dark text-white px-12 py-6">
             <div className="sm:flex sm:justify-between sm:items-baseline">
                 <div className="sm:w-0 sm:flex-1">
-                <h1 id="message-heading" className="text-2xl font-medium">
-                    Full-Stack <span className="text-green-200">Developer</span>
+                <h1 id="message-heading" className="text-3xl font-medium">
+                    Personal <span className="text-green-200">Portfolio</span>
                 </h1>
-                <p className="mt-1 text-sm text-gray-500 truncate">Checkout and Payments Team</p>
+                <p className="mt-1 text-lg text-gray-500 truncate">You can check some of my Github project repositories below:</p>
                 </div>
             </div>
             </div>
