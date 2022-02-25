@@ -2,28 +2,42 @@
 const projects = [
     {
         name: 'Podcastr Application - Rocketseat\'s NLW 5',
-        email: 'lesliealexander@example.com',
+        email: 'pablofelipe1999@hotmail.com',
         role: 'Podcastr NextJS project realized on Rocketseat NLW 5. The deployed application link is attached below.',
         imageUrl: '',
         href: 'https://github.com/PabloFLPs/Podcastr-NextJS',
     },
     {
         name: 'Diversight Project - ioasys CAMP 2021',
-        email: 'lesliealexander@example.com',
+        email: 'pablofelipe1999@hotmail.com',
         role: 'Code referred to Diversight back-end  application, realized by META-EXPLOIT team, on ioasys Camp - Fase 02.',
         imageUrl: '',
         href: 'https://github.com/PabloFLPs/ioasys-CAMP-2021-diversight',
     },
     {
+        name: 'Send Email API - Nodemailer',
+        email: 'pablofelipe1999@hotmail.com',
+        role: 'This is a fully responsive HTML and CSS only application based on the video linked below.',
+        imageUrl: '',
+        href: 'https://github.com/PabloFLPs/Send-Email-API',
+    },
+    {
+        name: 'News App - NextJS',
+        email: 'pablofelipe1999@hotmail.com',
+        role: 'This is a simple News App made with NextJS and News API site: https://newsapi.org',
+        imageUrl: '',
+        href: 'https://github.com/PabloFLPs/NextJS-News-App',
+    },
+    {
         name: 'LetMeAsk Application - Rocketseat\'s NLW 6',
-        email: 'lesliealexander@example.com',
+        email: 'pablofelipe1999@hotmail.com',
         role: 'LetMeAsk React project realized on Rocketseat NLW 6. The link adress to the deployed application is linked below.',
         imageUrl:'',
         href: 'https://github.com/PabloFLPs/Rocketseat-NLW6-React',
     },
     {
         name: 'Responsive Website - Only HTML and CSS',
-        email: 'lesliealexander@example.com',
+        email: 'pablofelipe1999@hotmail.com',
         role: 'This is a fully responsive HTML and CSS only application based on the video linked below.',
         imageUrl: '',
         href: 'https://github.com/PabloFLPs/responsive-html-css-only',
@@ -48,7 +62,6 @@ export default function Projects() {
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:px-60 bg-dark text-white px-12 pb-6">
                 {projects.map((project) => (
                 <div
-                    key={project.email}
                     className="relative rounded-lg border-none bg-dark-gray px-6 py-5 shadow-sm flex items-center space-x-3 hover:ring-1 hover:ring-light-brown transition-all duration-300"
                 >
                     <div className="flex-shrink-0">

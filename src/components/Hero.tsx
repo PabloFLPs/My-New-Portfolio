@@ -14,7 +14,7 @@ export default function Hero() {
               <span className="block text-light-brown xl:inline">Pablo Felipe</span>
             </h1>
             <p className="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
-              I am a Computer Engineering student, loving technology and programming since "...I've seen space it's been too long".
+              I am a Computer Engineering student on the way to specialize in Web Development. Loving technology and programming since "...I've seen space it's been too long".
             </p>
             <div className="mt-6 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
