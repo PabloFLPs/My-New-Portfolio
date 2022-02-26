@@ -18,7 +18,53 @@
 import React from "react";
 import { RiPhoneFill, RiMailFill } from "react-icons/ri";
 
+import {useState} from 'react'
+import axios from 'axios';
+
+import "react-toastify/dist/ReactToastify.css"
+import {toast, ToastContainer} from "react-toastify"
+
 export default function Example() {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const [phone, setPhone] = useState('')
+
+  const [disableButtonState, setDisableButtonState] = useState(false)
+
+  async function onSubmit(event: any) {
+    event.preventDefault()
+
+    const formToBeSubmitted = {
+      name: name,
+      email: email,
+      message: message + "\n\nPhone: " + phone
+    }
+
+    setDisableButtonState(true)
+
+    try {
+      toast.promise(
+        axios.post("https://email-free-api.herokuapp.com/send-email", formToBeSubmitted),
+        {
+          pending: {
+            render(){return 'Sending email...'}
+          },
+          success: {
+            render(){return '🐈‍⬛ Email Sent!'}
+          },
+          error: {
+            render(){return '🐈‍⬛ Error!'}
+          }
+        }
+      )
+    } catch (error) {
+      //if(error) errorToastEmitter()
+    }
+    
+    setDisableButtonState(false)
+  }
+
   return (
     <div id="Contact" className="relative bg-dark text-white px-12 py-8">
       <div className="absolute inset-0">
@@ -50,9 +96,9 @@ export default function Example() {
             </dl>
           </div>
         </div>
-        <div className="bg-dark border-none rounded-md py-16 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
+        <div className="bg-dark border-none rounded-md py-16 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12 text-dark-gray">
           <div className="max-w-lg mx-auto lg:max-w-none">
-            <form action="#" method="POST" onSubmit={(event: React.FormEvent<HTMLFormElement>) => event.preventDefault()} className="grid grid-cols-1 gap-y-6">
+            <form action="#" method="POST" onSubmit={onSubmit} className="grid grid-cols-1 gap-y-6">
               <div>
                 <label htmlFor="full-name" className="sr-only">
                   Full name
@@ -64,6 +110,8 @@ export default function Example() {
                   autoComplete="name"
                   className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 rounded-md"
                   placeholder="Full name"
+                  value={name}
+                  onChange={event => setName(event.target.value)}
                 />
               </div>
               <div>
@@ -77,6 +125,8 @@ export default function Example() {
                   autoComplete="email"
                   className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 rounded-md"
                   placeholder="Email"
+                  value={email}
+                  onChange={event => setEmail(event.target.value)}
                 />
               </div>
               <div>
@@ -90,6 +140,8 @@ export default function Example() {
                   autoComplete="tel"
                   className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 rounded-md"
                   placeholder="Phone"
+                  value={phone}
+                  onChange={event => setPhone(event.target.value)}
                 />
               </div>
               <div>
@@ -102,13 +154,17 @@ export default function Example() {
                   rows={4}
                   className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 rounded-md"
                   placeholder="Message"
+                  value={message}
                   defaultValue={''}
+                  onChange={event => setMessage(event.target.value)}
                 />
               </div>
               <div>
+                <ToastContainer position="bottom-center" theme="dark"/>
                 <button
                   type="submit"
-                  className="inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-light-brown hover:bg-opacity-80 transition-all duration-300"
+                  className="inline-flex disabled:opacity-50 justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-light-brown hover:bg-opacity-80 transition-all duration-300"
+                  disabled={disableButtonState}
                 >
                   Submit
                 </button>
