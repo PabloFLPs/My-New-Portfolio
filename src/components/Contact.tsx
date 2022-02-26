@@ -36,7 +36,7 @@ export default function Example() {
                 <dt className="sr-only">Email</dt>
                 <dd className="flex">
                   <RiMailFill className="flex-shrink-0 h-6 w-6 text-light-brown" aria-hidden="true" />
-                  <span className="ml-3">pablo@lecode.dev</span>
+                  <a href="mailto:pablo@lecode.dev" className="ml-3 hover:text-light-brown transition-all duration-300">pablo@lecode.dev</a>
                 </dd>
               </div>
             </dl>
