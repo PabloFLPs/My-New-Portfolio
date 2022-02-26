@@ -30,42 +30,42 @@ import {ReactComponent as PostgresIcon} from "../assets/svg/postgres.svg"
 const frontendItems = [
     {
         name: 'React',
-        href: '',
+        href: 'https://reactjs.org/',
         icon: (props: React.HTMLAttributes<SVGElement>) => (
             <ReactIcon {...props}/>
         ),
     },
     {
         name: 'NextJS',
-        href: '',
+        href: 'https://nextjs.org/',
         icon: (props: React.HTMLAttributes<SVGElement>) => (
             <NextJSIcon {...props}/>
         ),
     },
     {
         name: 'HTML',
-        href: '',
+        href: 'https://html.com/',
         icon: (props: React.HTMLAttributes<SVGElement>) => (
             <HTMLIcon {...props}/>
         ),
     },
     {
         name: 'CSS',
-        href: '',
+        href: 'https://www.w3.org/Style/CSS/',
         icon: (props: React.HTMLAttributes<SVGElement>) => (
             <CSSIcon {...props}/>
         ),
     },
     {
         name: 'Sass',
-        href: '',
+        href: 'https://sass-lang.com/',
         icon: (props: React.HTMLAttributes<SVGElement>) => (
             <SassIcon {...props}/>
         ),
     },
     {
         name: 'Tailwind',
-        href: '',
+        href: 'https://tailwindcss.com/',
         icon: (props: React.HTMLAttributes<SVGElement>) => (
             <TailwindIcon {...props}/>
         ),
@@ -75,28 +75,28 @@ const frontendItems = [
 const backendItems = [
     {
         name: 'NodeJS',
-        href: '',
+        href: 'https://nodejs.org/',
         icon: (props: React.HTMLAttributes<SVGElement>) => (
             <NodeJSIcon {...props}/>
         ),
     },
     {
         name: 'Insomnia',
-        href: '',
+        href: 'https://insomnia.rest/',
         icon: (props: React.HTMLAttributes<SVGElement>) => (
             <InsomniaIcon {...props}/>
         ),
     },
     {
         name: 'Sequelize',
-        href: '',
+        href: 'https://sequelize.org/',
         icon: (props: React.HTMLAttributes<SVGElement>) => (
             <SequelizeIcon {...props}/>
         ),
     },
     {
         name: 'Postgres',
-        href: '',
+        href: 'https://www.postgresql.org/',
         icon: (props: React.HTMLAttributes<SVGElement>) => (
             <PostgresIcon {...props}/>
         ),
@@ -155,7 +155,7 @@ export default function AboutMe() {
                                         </a>
                                     ))}
                                 </div>
-                                I have also some experience with back-end tools:
+                                I have also experience with back-end development:
                                 <div className="flex space-x-6 md:order-2 py-4">
                                     {backendItems.map((item) => (
                                         <a key={item.name} href={item.href} className="hover:text-light-brown transition-all duration-300">
