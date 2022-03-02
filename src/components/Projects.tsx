@@ -54,7 +54,7 @@ export default function Projects() {
                 <h1 id="message-heading" className="text-3xl font-medium">
                     Personal <span className="text-light-brown">Portfolio</span>
                 </h1>
-                <p className="mt-1 text-lg text-gray-500 truncate">You can check some of my Github project repositories below:</p>
+                <p className="mt-1 text-lg text-gray-500 truncate">You can check some of my project repositories below:</p>
                 </div>
             </div>
             </div>
@@ -62,6 +62,7 @@ export default function Projects() {
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:px-60 bg-dark text-white px-12 pb-6">
                 {projects.map((project) => (
                 <div
+                    key={project.email}
                     className="relative rounded-lg border-none bg-dark-gray px-6 py-5 shadow-sm flex items-center space-x-3 hover:ring-1 hover:ring-light-brown transition-all duration-300"
                 >
                     <div className="flex-shrink-0">
