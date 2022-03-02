@@ -37,7 +37,7 @@ export default function Projects() {
             <div id="Projects" className="border-light-brown bg-dark text-white px-14 md:px-24 pb-6 pt-20 lg:px-40">
             <div className="sm:flex sm:justify-between sm:items-baseline">
                 <div className="sm:w-0 sm:flex-1">
-                <h1 id="message-heading" className="text-2xl font-medium">
+                <h1 id="message-heading" className="text-3xl font-bold">
                     Full-Stack <span className="text-light-brown">Developer</span>
                 </h1>
                 <p className="mt-1 text-sm text-gray-500 truncate">Checkout and Payments Team</p>
