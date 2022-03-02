@@ -112,15 +112,29 @@ export default function AboutMe() {
                     <h2 className="text-center text-3xl font-bold">
                         Software <span className="text-light-brown">Developer</span>
                     </h2>
-                    <blockquote className="mt-10">
-                    <div className="max-w-4xl mx-auto text-center text-lg leading-7 font-medium text-gray-900">
-                        <p>
-                            I am always very curious about innovations and my knowledge in the technology and development areas. When something interests me, I seek to increase my knowledge about that.
-                            <p className="pt-4">
-                                You can check my resume <a href="https://drive.google.com/file/d/185LM0OAUKOe1c2b2eCE9613QH37Pt_gb/view?usp=sharing" className="text-light-brown hover:opacity-80">here.</a>
+                    <blockquote>
+                        <div>
+                            <p className="mt-6 text-2xl text-center m-auto font-medium text-white">
+                                I have experience in the following front-end tools:
+                                <div className="flex space-x-6 md:order-2 py-4 pb-8 justify-center">
+                                    {frontendItems.map((item) => (
+                                        <a key={item.name} href={item.href} target="_blank" className="hover:text-light-brown transition-all duration-300">
+                                        <span className="sr-only">{item.name}</span>
+                                        <item.icon className="h-6 w-6" aria-hidden="true" />
+                                        </a>
+                                    ))}
+                                </div>
+                                I have also experience with back-end development:
+                                <div className="flex space-x-6 md:order-2 py-4 justify-center">
+                                    {backendItems.map((item) => (
+                                        <a key={item.name} href={item.href} target="_blank" className="hover:text-light-brown transition-all duration-300">
+                                        <span className="sr-only">{item.name}</span>
+                                        <item.icon className="h-6 w-6" aria-hidden="true" />
+                                        </a>
+                                    ))}
+                                </div>
                             </p>
-                        </p>
-                    </div>
+                        </div>
                     </blockquote>
                 </div>
                 </div>
@@ -141,35 +155,21 @@ export default function AboutMe() {
                         </div>
                     </div>
                     </div>
-                    <div className="mt-12 lg:m-0 lg:col-span-2 lg:pl-8">
+                    <div className="mt-12 lg:m-0 lg:col-span-2 lg:pl-4">
                     <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:px-0 lg:py-20 lg:max-w-none">
-                        <blockquote>
-                        <div>
-                            <p className="mt-6 text-2xl font-medium text-white">
-                                I have experience in the following front-end tools:
-                                <div className="flex space-x-6 md:order-2 py-4 pb-8">
-                                    {frontendItems.map((item) => (
-                                        <a key={item.name} href={item.href} className="hover:text-light-brown transition-all duration-300">
-                                        <span className="sr-only">{item.name}</span>
-                                        <item.icon className="h-6 w-6" aria-hidden="true" />
-                                        </a>
-                                    ))}
-                                </div>
-                                I have also experience with back-end development:
-                                <div className="flex space-x-6 md:order-2 py-4">
-                                    {backendItems.map((item) => (
-                                        <a key={item.name} href={item.href} className="hover:text-light-brown transition-all duration-300">
-                                        <span className="sr-only">{item.name}</span>
-                                        <item.icon className="h-6 w-6" aria-hidden="true" />
-                                        </a>
-                                    ))}
-                                </div>
-                            </p>
-                        </div>
-                        <footer className="mt-6">
-                            <p className="text-base font-medium text-white">Pablo Felipe</p>
-                            <p className="text-base font-medium text-white">Software Developer at <a href="https://lecode.dev/" className="text-light-brown hover:opacity-80">LeCode</a></p>
-                        </footer>
+                        <blockquote className="mt-10">
+                            <div className="max-w-4xl mx-auto text-center text-lg leading-7 font-medium text-white">
+                                <p>
+                                    I am always very curious about innovations and my knowledge in the technology and development areas. When something interests me, I seek to increase my knowledge about that.
+                                    <p className="pt-4">
+                                        You can check my resume <a href="https://drive.google.com/file/d/185LM0OAUKOe1c2b2eCE9613QH37Pt_gb/view?usp=sharing" className="text-light-brown hover:opacity-80">here.</a>
+                                    </p>
+                                </p>
+                            </div>
+                            <footer className="mt-12">
+                                <p className="text-base font-medium text-white">Pablo Felipe</p>
+                                <p className="text-base font-medium text-white">Software Developer at <a href="https://lecode.dev/" className="text-light-brown hover:opacity-80">LeCode</a></p>
+                            </footer>
                         </blockquote>
                     </div>
                     </div>
