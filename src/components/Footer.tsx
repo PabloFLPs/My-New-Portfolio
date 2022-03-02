@@ -2,7 +2,7 @@
 import {ReactComponent as LinkedIn} from "../assets/svg/linkedin.svg"
 import {ReactComponent as Github} from "../assets/svg/github.svg"
 import {ReactComponent as Upwork} from "../assets/svg/upwork.svg"
-import {ReactComponent as Twitter} from "../assets/svg/twitter.svg"
+import {ReactComponent as DevCommunity} from "../assets/svg/devcommunity.svg"
 
 const navigation = [
     {
@@ -27,10 +27,10 @@ const navigation = [
         ),
     },
     {
-        name: 'Twitter',
-        href: 'https://twitter.com/pablo_felps',
+        name: 'Dev Community',
+        href: 'https://dev.to/pablofelps',
         icon: (props: React.HTMLAttributes<SVGElement>) => (
-            <Twitter {...props}/>
+            <DevCommunity {...props}/>
         ),
     },
 ]

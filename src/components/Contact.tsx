@@ -75,22 +75,14 @@ export default function Example() {
           <div className="max-w-lg mx-auto">
             <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Get in <span className="text-light-brown">Touch</span></h2>
             <p className="mt-3 text-lg leading-6 text-gray-500">
-              Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus
-              arcu.
+              Do you have a question? You can send me a message and I will back to you as soon as possible.
             </p>
             <dl className="mt-8 text-base text-gray-500">
-              <div className="mt-6">
-                <dt className="sr-only">Phone number</dt>
-                <dd className="flex">
-                  <RiPhoneFill className="flex-shrink-0 h-6 w-6 text-light-brown" aria-hidden="true" />
-                  <span className="ml-3">+1 (555) 123-4567</span>
-                </dd>
-              </div>
               <div className="mt-3">
                 <dt className="sr-only">Email</dt>
                 <dd className="flex">
                   <RiMailFill className="flex-shrink-0 h-6 w-6 text-light-brown" aria-hidden="true" />
-                  <span className="ml-3">support@example.com</span>
+                  <a href="mailto:pablo@lecode.dev" className="ml-3 hover:text-light-brown transition-all duration-300">pablo@lecode.dev</a>
                 </dd>
               </div>
             </dl>
@@ -109,7 +101,7 @@ export default function Example() {
                   id="full-name"
                   autoComplete="name"
                   className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 rounded-md"
-                  placeholder="Full name"
+                  placeholder="Name"
                   value={name}
                   onChange={event => setName(event.target.value)}
                   required
