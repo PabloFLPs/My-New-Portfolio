@@ -17,7 +17,7 @@
 export default function AboutMe() {
     return (
         <>
-            <section id="About" className="py-6 bg-dark text-white overflow-hidden md:py-12 lg:pt-24">
+            <section id="About" className="py-6 pt-20 bg-dark text-white overflow-hidden lg:pt-24">
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="relative">
                     <h2 className="text-center text-3xl font-bold">

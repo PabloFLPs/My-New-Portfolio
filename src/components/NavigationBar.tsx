@@ -33,7 +33,7 @@ export default function NavigationBar() {
                   <MdOutlineComputer
                     className="hidden lg:block h-8 w-auto text-gray-700"
                   />
-                  <h1 className="text-gray-700 inline-flex items-center px-6 text-xl font-semibold">
+                  <h1 className="text-gray-700 inline-flex items-center px-2 sm:px-8 text-xl font-semibold">
                       Pablo Felipe
                   </h1>
                 </div>
