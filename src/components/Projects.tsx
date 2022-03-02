@@ -48,18 +48,18 @@ const projects = [
 export default function Projects() {
     return (
         <>
-            <div id="Projects" className="border-light-brown bg-dark text-white px-20 pt-24 lg:px-40">
+            <div id="Projects" className="border-light-brown bg-dark text-white px-14 md:px-24 pb-6 pt-20 lg:px-40">
             <div className="sm:flex sm:justify-between sm:items-baseline">
                 <div className="sm:w-0 sm:flex-1">
-                <h1 id="message-heading" className="text-3xl font-medium">
-                    Personal <span className="text-light-brown">Portfolio</span>
+                <h1 id="message-heading" className="text-3xl font-bold">
+                  Personal <span className="text-light-brown">Portfolio</span>
                 </h1>
                 <p className="mt-1 text-lg text-gray-500 truncate">You can check some of my project repositories below:</p>
                 </div>
             </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:px-60 bg-dark text-white px-12 pb-6">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 px-6 md:px-16 lg:px-40 xl:px-60 bg-dark text-white pb-2">
                 {projects.map((project) => (
                 <div
                     key={project.email}

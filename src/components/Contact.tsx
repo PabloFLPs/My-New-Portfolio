@@ -20,14 +20,14 @@ import { RiPhoneFill, RiMailFill } from "react-icons/ri";
 
 export default function Example() {
   return (
-    <div id="Contact" className="relative bg-dark text-white px-12 py-8">
+    <div id="Contact" className="relative bg-dark text-white px-12 pt-6">
       <div className="absolute inset-0">
         <div className="absolute inset-y-0 left-0 w-1/2 bg-gray-50" />
       </div>
       <div className="relative max-w-7xl mx-auto lg:grid lg:grid-cols-5">
-        <div className="bg-gray-50 px-4 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
-          <div className=" max-w-lg mx-auto">
-            <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">Get in <span className="text-light-brown">Touch</span></h2>
+        <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
+          <div className="max-w-lg mx-auto">
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Get in <span className="text-light-brown">Touch</span></h2>
             <p className="mt-3 text-lg leading-6 text-gray-500">
               Do you have a question? You can send me a message and I will back to you as soon as possible.
             </p>
