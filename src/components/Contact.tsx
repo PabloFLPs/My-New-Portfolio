@@ -29,7 +29,7 @@ export default function Example() {
           <div className=" max-w-lg mx-auto">
             <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">Get in <span className="text-light-brown">Touch</span></h2>
             <p className="mt-3 text-lg leading-6 text-gray-500">
-              Do you have a question or want to talk with me? You can send me a message and I will back to you as soon as possible.
+              Do you have a question? You can send me a message and I will back to you as soon as possible.
             </p>
             <dl className="mt-8 text-base text-gray-500">
               <div className="mt-3">
