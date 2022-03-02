@@ -32,7 +32,7 @@ export default function Example() {
 
   const [disableButtonState, setDisableButtonState] = useState(false)
 
-  async function onSubmit(event: any) {
+  async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
     const formToBeSubmitted = {
