@@ -44,22 +44,22 @@ export default function Example() {
     setDisableButtonState(true)
 
     try {
-      toast.promise(
+      await toast.promise(
         axios.post("https://email-free-api.herokuapp.com/send-email", formToBeSubmitted),
         {
           pending: {
-            render(){return 'Sending email...'}
+            render(){return '🏄‍♂️🌊 Sending email...'}
           },
           success: {
-            render(){return '🐈‍⬛ Email Sent!'}
+            render(){return '☕ Email Sent!'}
           },
           error: {
-            render(){return '🐈‍⬛ Error!'}
+            render(){return 'Error!'}
           }
         }
       )
-    } catch (error) {
-      //if(error) errorToastEmitter()
+    } catch(error){
+      console.log(error)
     }
     
     setDisableButtonState(false)
@@ -112,6 +112,7 @@ export default function Example() {
                   placeholder="Full name"
                   value={name}
                   onChange={event => setName(event.target.value)}
+                  required
                 />
               </div>
               <div>
@@ -127,6 +128,7 @@ export default function Example() {
                   placeholder="Email"
                   value={email}
                   onChange={event => setEmail(event.target.value)}
+                  required
                 />
               </div>
               <div>
@@ -142,6 +144,7 @@ export default function Example() {
                   placeholder="Phone"
                   value={phone}
                   onChange={event => setPhone(event.target.value)}
+                  required
                 />
               </div>
               <div>
@@ -157,6 +160,7 @@ export default function Example() {
                   value={message}
                   defaultValue={''}
                   onChange={event => setMessage(event.target.value)}
+                  required
                 />
               </div>
               <div>
