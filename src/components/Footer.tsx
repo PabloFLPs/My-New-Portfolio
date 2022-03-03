@@ -48,7 +48,7 @@ export default function Footer() {
             ))}
             </div>
             <div className="mt-8 md:mt-0 md:order-1">
-            <p className="text-center text-base text-gray-400">&copy; 2021 Pablo FELPs Portfolio - Made with Tailwind. </p>
+            <p className="text-center text-base text-gray-400">&copy; {new Date().getFullYear()} Pablo FELPs Portfolio - Made with Tailwind. </p>
             </div>
         </div>
         </footer>
