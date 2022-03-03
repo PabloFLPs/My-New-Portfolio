@@ -162,13 +162,13 @@ export default function AboutMe() {
                                 <p>
                                     I am always very curious about innovations and my knowledge in the technology and development areas. When something interests me, I seek to increase my knowledge about that.
                                     <p className="pt-4">
-                                        You can check my resume <a href="https://drive.google.com/file/d/185LM0OAUKOe1c2b2eCE9613QH37Pt_gb/view?usp=sharing" className="text-light-brown hover:opacity-80">here.</a>
+                                        You can check my resume <a href="https://drive.google.com/file/d/185LM0OAUKOe1c2b2eCE9613QH37Pt_gb/view?usp=sharing" target="_blank" className="text-light-brown hover:opacity-80">here.</a>
                                     </p>
                                 </p>
                             </div>
                             <footer className="mt-12">
                                 <p className="text-base font-medium text-white">Pablo Felipe</p>
-                                <p className="text-base font-medium text-white">Software Developer at <a href="https://lecode.dev/" className="text-light-brown hover:opacity-80">LeCode</a></p>
+                                <p className="text-base font-medium text-white">Software Developer at <a href="https://lecode.dev/" target="_blank" className="text-light-brown hover:opacity-80">LeCode</a></p>
                             </footer>
                         </blockquote>
                     </div>
