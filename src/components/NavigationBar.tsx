@@ -58,6 +58,12 @@ export default function NavigationBar() {
                     Portfolio
                   </a>
                   <a
+                    href="#Experience"
+                    className="border-transparent hover:border-light-brown hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all duration-500"
+                  >
+                    Experience
+                  </a>
+                  <a
                     href="#Contact"
                     className="border-transparent hover:border-light-brown hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all duration-500"
                   >
@@ -91,6 +97,13 @@ export default function NavigationBar() {
                 className="border-transparent text-white hover:border-light-brown hover:text-light-brown block pl-3 pr-4 py-2 border-l-4 text-base font-medium transition-all duration-300"
               >
                 Portfolio
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="#Experience"
+                className="border-transparent text-white hover:border-light-brown hover:text-light-brown block pl-3 pr-4 py-2 border-l-4 text-base font-medium transition-all duration-300"
+              >
+                Experience
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
