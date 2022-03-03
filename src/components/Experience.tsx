@@ -7,7 +7,7 @@ const experiences = [
   {
     role: 'Electrotechnician',
     institution: 'CEFET MG - Campus X',
-    linkedinIcon: (props: React.HTMLAttributes<SVGElement>) => (
+    socialIcon: (props: React.HTMLAttributes<SVGElement>) => (
       <HiOutlineAcademicCap {...props}/>
     ),
     linkedinUrl: 'https://www.linkedin.com/company/cefet-mg/',
@@ -15,7 +15,7 @@ const experiences = [
   {
     role: 'IT Support',
     institution: 'Skill Informática',
-    linkedinIcon: (props: React.HTMLAttributes<SVGElement>) => (
+    socialIcon: (props: React.HTMLAttributes<SVGElement>) => (
       <HiOutlineCode {...props}/>
     ),
     linkedinUrl: 'https://www.linkedin.com/company/skill-inform-tica/about/',
@@ -24,7 +24,7 @@ const experiences = [
     role: 'Computer Engineer',
     institution: 'CEFET MG - Campus II',
     description: "",
-    linkedinIcon: (props: React.HTMLAttributes<SVGElement>) => (
+    socialIcon: (props: React.HTMLAttributes<SVGElement>) => (
       <HiOutlineAcademicCap {...props}/>
     ),
     linkedinUrl: 'https://www.linkedin.com/company/cefet-mg/',
@@ -33,7 +33,7 @@ const experiences = [
     role: 'IT Analist',
     institution: 'Projects Office - CEFET MG',
     description: "",
-    linkedinIcon: (props: React.HTMLAttributes<SVGElement>) => (
+    socialIcon: (props: React.HTMLAttributes<SVGElement>) => (
       <HiOutlineCode {...props}/>
     ),
     linkedinUrl: 'https://www.linkedin.com/company/cefet-mg/',
@@ -42,7 +42,7 @@ const experiences = [
     role: 'Marketing Analist',
     institution: 'Commit Jr. - CEFET MG',
     description: "",
-    linkedinIcon: (props: React.HTMLAttributes<SVGElement>) => (
+    socialIcon: (props: React.HTMLAttributes<SVGElement>) => (
       <HiOutlineShare {...props}/>
     ),
     linkedinUrl: 'https://www.linkedin.com/company/commitjr/',
@@ -51,7 +51,7 @@ const experiences = [
     role: 'Software Developer',
     institution: 'LeCode',
     description: "",
-    linkedinIcon: (props: React.HTMLAttributes<SVGElement>) => (
+    socialIcon: (props: React.HTMLAttributes<SVGElement>) => (
       <HiOutlineCode {...props}/>
     ),
     linkedinUrl: 'https://www.linkedin.com/company/lecodedev/',
@@ -72,25 +72,25 @@ export default function Experiences() {
           </div>
           <ul role="list" className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3">
             {experiences.map((experience) => (
-              <li key={experience.role} className="px-14 py-6 bg-gray-800 text-center rounded-lg xl:text-left">
-                <div className="space-y-6">
-                  <div className="xl:flex xl:items-center xl:justify-between space-y-4 xl:space-y-0">
-                    <experience.linkedinIcon className="m-auto h-12 w-12 xl:m-0 xl:w-10 xl:h-10 hover:text-light-brown transition-all duration-300"/> 
-                    <div className="font-medium text-lg leading-6 xl:space-y-1 px-4">
-                      <h3 className="text-white">{experience.role}</h3>
-                      <p className="text-white">{experience.description}</p>
-                      <p className="text-light-brown">{experience.institution}</p>
-                    </div>
-                    <ul role="list" className="flex justify-center space-x-5">
-                      <li>
-                        <a href={experience.linkedinUrl} target="_blank" className="text-gray-400 hover:text-light-brown transition-all duration-300">
+              <li key={experience.role} className="px-14 py-6 bg-gray-800 text-center rounded-lg xl:text-left transition-all duration-300">
+                <a href={experience.linkedinUrl} target="_blank" className="text-gray-400">
+                  <div className="space-y-6">
+                    <div className="group xl:flex xl:items-center xl:justify-between space-y-4 xl:space-y-0 ">
+                      <experience.socialIcon className="m-auto h-12 w-12 xl:m-0 xl:w-10 xl:h-10"/>
+                      <div className="font-medium text-lg leading-6 xl:space-y-1 px-4">
+                        <h3 className="text-white">{experience.role}</h3>
+                        <p className="text-white">{experience.description}</p>
+                        <p className="text-light-brown">{experience.institution}</p>
+                      </div>
+                      <ul role="list" className="flex justify-center space-x-5">
+                        <li>
                           <span className="sr-only">LinkedIn</span>
-                          <LinkedIn className="w-5 h-6"/>
-                        </a>
-                      </li>
-                    </ul>
+                          <LinkedIn className="w-5 h-6 group-hover:text-light-brown"/>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
+                </a>
               </li>
             ))}
           </ul>
