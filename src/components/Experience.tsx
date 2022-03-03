@@ -72,11 +72,11 @@ export default function Experiences() {
           </div>
           <ul role="list" className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3">
             {experiences.map((experience) => (
-              <li key={experience.role} className="px-8 py-6 bg-gray-800 text-center rounded-lg xl:text-left">
+              <li key={experience.role} className="px-14 py-6 bg-gray-800 text-center rounded-lg xl:text-left">
                 <div className="space-y-6">
-                  <div className="xl:flex xl:items-center xl:justify-between space-y-4 ">
+                  <div className="xl:flex xl:items-center xl:justify-between space-y-4 xl:space-y-0">
                     <experience.linkedinIcon className="m-auto h-12 w-12 xl:m-0 xl:w-10 xl:h-10 hover:text-light-brown transition-all duration-300"/> 
-                    <div className="font-medium text-lg leading-6 xl:space-y-1 px-6">
+                    <div className="font-medium text-lg leading-6 xl:space-y-1 px-4">
                       <h3 className="text-white">{experience.role}</h3>
                       <p className="text-white">{experience.description}</p>
                       <p className="text-light-brown">{experience.institution}</p>
