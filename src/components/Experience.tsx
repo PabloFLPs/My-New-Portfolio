@@ -1,6 +1,4 @@
 /* This example requires Tailwind CSS v2.0+ */
-import {ReactComponent as LinkedIn} from "../assets/svg/linkedin.svg"
-
 import { HiOutlineAcademicCap, HiOutlineCode, HiOutlineShare } from "react-icons/hi";
 
 const experiences = [
@@ -75,7 +73,7 @@ export default function Experiences() {
               <a href={experience.linkedinUrl} target="_blank" className="text-gray-400">
                 <div className="space-y-6">
                   <div className="group xl:flex xl:items-center xl:justify-between space-y-4 xl:space-y-0">
-                    <experience.socialIcon className="m-auto h-12 w-12 xl:m-0 xl:w-10 xl:h-10"/>
+                    <experience.socialIcon className="m-auto h-12 w-12 xl:m-0 xl:w-10 xl:h-10 group-hover:text-light-brown transition-all duration-300"/>
                     <div className="font-medium text-lg leading-6 xl:space-y-1 px-4">
                       <h3 className="text-white">{experience.role}</h3>
                       <p className="text-white">{experience.description}</p>
@@ -84,7 +82,6 @@ export default function Experiences() {
                     <ul role="list" className="flex justify-center space-x-5">
                       <li>
                         <span className="sr-only">LinkedIn</span>
-                        <LinkedIn className="w-5 h-6 group-hover:text-light-brown transition-all duration-300"/>
                       </li>
                     </ul>
                   </div>
