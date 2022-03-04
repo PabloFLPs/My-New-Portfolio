@@ -71,10 +71,10 @@ export default function Experiences() {
       <div className="mx-auto max-w-7xl">
         <ul role="list" className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3">
           {experiences.map((experience) => (
-            <li key={experience.role} className="px-14 py-6 bg-gray-800 text-center rounded-lg xl:text-left transition-all duration-300">
+            <li key={experience.role} className="px-14 py-6 bg-gray-800 text-center rounded-lg xl:text-left">
               <a href={experience.linkedinUrl} target="_blank" className="text-gray-400">
                 <div className="space-y-6">
-                  <div className="group xl:flex xl:items-center xl:justify-between space-y-4 xl:space-y-0 ">
+                  <div className="group xl:flex xl:items-center xl:justify-between space-y-4 xl:space-y-0">
                     <experience.socialIcon className="m-auto h-12 w-12 xl:m-0 xl:w-10 xl:h-10"/>
                     <div className="font-medium text-lg leading-6 xl:space-y-1 px-4">
                       <h3 className="text-white">{experience.role}</h3>
@@ -84,7 +84,7 @@ export default function Experiences() {
                     <ul role="list" className="flex justify-center space-x-5">
                       <li>
                         <span className="sr-only">LinkedIn</span>
-                        <LinkedIn className="w-5 h-6 group-hover:text-light-brown"/>
+                        <LinkedIn className="w-5 h-6 group-hover:text-light-brown transition-all duration-300"/>
                       </li>
                     </ul>
                   </div>
