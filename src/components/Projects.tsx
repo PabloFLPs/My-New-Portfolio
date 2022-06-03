@@ -82,7 +82,7 @@ export default function Projects() {
                     <div className="flex-shrink-0">
                     </div>
                     <div className="flex-1 min-w-0">
-                    <a href={project.href} target="_blank" rel="noreferrer" className="focus:outline-none">
+                    <a href={project.href} target="_blank" className="focus:outline-none">
                         <span className="absolute inset-0" aria-hidden="true" />
                         <p className="text-sm font-medium text-light-brown">{project.name}</p>
                         <p className="text-sm">{project.role}</p>
