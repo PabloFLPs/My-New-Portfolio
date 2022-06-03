@@ -68,7 +68,7 @@ export default function Projects() {
                 <h1 id="message-heading" className="text-3xl font-bold">
                   Personal <span className="text-light-brown">Portfolio</span>
                 </h1>
-                <p className="mt-1 text-lg text-gray-500 truncate">You can check some of my project repositories below:</p>
+                <p className="mt-1 text-lg text-gray-500">You can check some of my project repositories below:</p>
                 </div>
             </div>
             </div>
