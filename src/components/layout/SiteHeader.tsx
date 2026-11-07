@@ -2,7 +2,7 @@ import Link from "next/link";
 import { type NavCopy } from "@/content/types/nav";
 import { homeSections } from "@/content/sections";
 import { type Locale } from "@/i18n/locales";
-import { routeFor, sectionHref } from "@/i18n/routes";
+import { homePath, sectionHref } from "@/i18n/routes";
 import { LanguageSwitch } from "./LanguageSwitch";
 import { MobileMenu } from "./MobileMenu";
 
@@ -29,7 +29,7 @@ export function SiteHeader({ locale, nav, alternatePath, onHome }: Props) {
         className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-5 md:px-20 md:py-7"
       >
         <Link
-          href={routeFor("home", locale)}
+          href={homePath(locale)}
           className="font-serif text-xl leading-none font-medium italic md:text-2xl"
         >
           Pablo Felipe

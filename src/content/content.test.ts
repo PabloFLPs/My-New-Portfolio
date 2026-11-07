@@ -100,6 +100,16 @@ describe("copy covers every data entry", () => {
     expect(Object.keys(t.work.more).sort()).toEqual(otherProjects.map((p) => p.slug).sort());
     expect(Object.keys(t.journey.items).sort()).toEqual(journey.map((j) => j.id).sort());
   });
+
+  it("both languages have case studies for the same projects", () => {
+    expect(Object.keys(pt.caseStudies.studies).sort()).toEqual(Object.keys(en.caseStudies.studies).sort());
+    for (const slug of Object.keys(en.caseStudies.studies)) {
+      expect(
+        featuredProjects.map((p) => p.slug),
+        slug,
+      ).toContain(slug);
+    }
+  });
 });
 
 describe("section numbers", () => {

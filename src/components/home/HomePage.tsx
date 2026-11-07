@@ -2,7 +2,7 @@ import { Fragment, type ReactNode } from "react";
 import { getDictionary } from "@/content";
 import { homeSections, type HomeSectionId } from "@/content/sections";
 import { otherLocale, type Locale } from "@/i18n/locales";
-import { routeFor, sectionHref } from "@/i18n/routes";
+import { homePath, projectPath, sectionHref } from "@/i18n/routes";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { About } from "./About";
@@ -18,7 +18,7 @@ export function HomePage({ locale }: { locale: Locale }) {
 
   const sections: Record<HomeSectionId, ReactNode> = {
     about: <About about={t.about} />,
-    ai: <AiWorkflow ai={t.ai} caseStudyHref={routeFor("marksage", locale)} />,
+    ai: <AiWorkflow ai={t.ai} caseStudyHref={projectPath("marksage", locale)} />,
     work: <SelectedWork work={t.work} locale={locale} />,
     journey: <Journey journey={t.journey} />,
     writing: <Writing writing={t.writing} locale={locale} />,
@@ -26,7 +26,7 @@ export function HomePage({ locale }: { locale: Locale }) {
   };
 
   const header = (
-    <SiteHeader locale={locale} nav={t.nav} alternatePath={routeFor("home", otherLocale(locale))} onHome />
+    <SiteHeader locale={locale} nav={t.nav} alternatePath={homePath(otherLocale(locale))} onHome />
   );
 
   return (

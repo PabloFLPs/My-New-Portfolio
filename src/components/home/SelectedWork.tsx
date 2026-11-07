@@ -4,31 +4,27 @@ import { type WorkCopy } from "@/content/types/work";
 import { featuredProjects, otherProjects, type FeaturedProject } from "@/content/data/projects";
 import { sectionNumber } from "@/content/sections";
 import { type Locale } from "@/i18n/locales";
-import { routeFor } from "@/i18n/routes";
+import { projectPath } from "@/i18n/routes";
+import { caseStudySlugs } from "@/lib/caseStudies";
 import { Container } from "@/components/ui/Container";
 import { Display } from "@/components/ui/Display";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
-function CardLink({
-  project,
-  locale,
-  children,
-}: {
-  project: FeaturedProject;
-  locale: Locale;
-  children: ReactNode;
-}) {
+type CardLinkProps = { project: FeaturedProject; locale: Locale; hasCaseStudy: boolean; children: ReactNode };
+
+/** The whole card links to the project's case study, or to its repository until it has one. */
+function CardLink({ project, locale, hasCaseStudy, children }: CardLinkProps) {
   const className = "group flex h-full flex-col gap-4 border-t border-line pt-6 md:pt-8";
-  if ("route" in project.href) {
+  if (hasCaseStudy) {
     return (
-      <Link href={routeFor(project.href.route, locale)} className={className}>
+      <Link href={projectPath(project.slug, locale)} className={className}>
         {children}
       </Link>
     );
   }
   return (
-    <ExternalLink href={project.href.url} className={className}>
+    <ExternalLink href={project.links.repo} className={className}>
       {children}
     </ExternalLink>
   );
@@ -36,6 +32,8 @@ function CardLink({
 
 /** Typographic project cards: no screenshots, so every project reads in the site's own visual language. */
 export function SelectedWork({ work, locale }: { work: WorkCopy; locale: Locale }) {
+  const withCaseStudy = new Set(caseStudySlugs());
+
   return (
     <section id="work" className="pb-14 md:pb-28">
       <Container className="flex flex-col gap-8 border-t border-line pt-14 md:gap-14 md:pt-28">
@@ -53,14 +51,14 @@ export function SelectedWork({ work, locale }: { work: WorkCopy; locale: Locale 
           {featuredProjects.map((project, index) => {
             const copy = work.featured[project.slug];
             if (!copy) return null;
-            const internal = "route" in project.href;
+            const internal = withCaseStudy.has(project.slug);
             return (
               <li key={project.slug} className="min-w-0">
-                <CardLink project={project} locale={locale}>
+                <CardLink project={project} locale={locale} hasCaseStudy={internal}>
                   <div className="flex items-baseline justify-between gap-6 font-mono text-xs leading-none">
                     <span className="text-faint">{String(index + 1).padStart(2, "0")}</span>
                     <span className="whitespace-nowrap text-accent-soft transition-colors group-hover:text-ink">
-                      {work.kinds[project.kind]}{" "}
+                      {internal ? work.kinds.caseStudy : work.kinds.code}{" "}
                       <span
                         aria-hidden="true"
                         className="inline-block transition-transform duration-300 group-hover:translate-x-1"

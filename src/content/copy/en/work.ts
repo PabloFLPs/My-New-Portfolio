@@ -4,7 +4,7 @@ export const work: WorkCopy = {
   label: "Projects",
   heading: { text: "Selected", accent: "work" },
   partLabel: "My part:",
-  kinds: { caseStudy: "Case study", code: "Code", live: "Live" },
+  kinds: { caseStudy: "Case study", code: "Code" },
   featured: {
     marksage: {
       tagline: "The Markdown editor that notices.",

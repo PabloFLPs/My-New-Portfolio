@@ -1,15 +1,12 @@
-import { type RouteName } from "@/i18n/routes";
+export const projectSlugs = ["marksage", "zollama", "loreforge", "route-flyover-studio"] as const;
 
-/** What the project card links to, and the word shown next to its name ("Code ↗", "Case study ↗"). */
-export type ProjectKind = "caseStudy" | "code" | "live";
+export type ProjectSlug = (typeof projectSlugs)[number];
 
 export type FeaturedProject = {
-  slug: string;
+  slug: ProjectSlug;
   name: string;
-  kind: ProjectKind;
-  /** Internal page for case studies; external URL otherwise. */
-  href: { route: RouteName } | { url: string };
   stack: string[];
+  links: { repo: string; live?: string };
 };
 
 export type OtherProject = { slug: string; name: string; stack: string[]; href: string };
@@ -18,32 +15,34 @@ export const featuredProjects: FeaturedProject[] = [
   {
     slug: "marksage",
     name: "Marksage",
-    kind: "caseStudy",
-    href: { route: "marksage" },
     stack: ["React", "TypeScript", "Vite", "In-browser ML"],
+    links: { repo: "https://github.com/PabloFLPs/Marksage", live: "https://marksage.vercel.app" },
   },
   {
     slug: "zollama",
     name: "Zollama",
-    kind: "code",
-    href: { url: "https://github.com/PabloFLPs/Zollama" },
     stack: ["TypeScript", "Zod", "Ollama"],
+    links: { repo: "https://github.com/PabloFLPs/Zollama" },
   },
   {
     slug: "loreforge",
     name: "Loreforge",
-    kind: "code",
-    href: { url: "https://github.com/PabloFLPs/loreforge" },
     stack: ["Next.js", "React", "Prisma", "Socket.IO"],
+    links: { repo: "https://github.com/PabloFLPs/loreforge" },
   },
   {
     slug: "route-flyover-studio",
     name: "Route Flyover Studio",
-    kind: "code",
-    href: { url: "https://github.com/PabloFLPs/activies-flyover-studio" },
     stack: ["Next.js", "TypeScript", "MapLibre GL", "WebCodecs"],
+    links: { repo: "https://github.com/PabloFLPs/activies-flyover-studio" },
   },
 ];
+
+export function getFeaturedProject(slug: ProjectSlug): FeaturedProject {
+  const project = featuredProjects.find((p) => p.slug === slug);
+  if (!project) throw new Error(`Unknown project: ${slug}`);
+  return project;
+}
 
 export const otherProjects: OtherProject[] = [
   {

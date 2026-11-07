@@ -2,18 +2,18 @@ import { type Metadata, type Viewport } from "next";
 import { site } from "@/content/data/site";
 import { type MetaCopy } from "@/content/types/shared";
 import { htmlLang, locales, ogLocale, type Locale } from "@/i18n/locales";
-import { routes, type RouteName } from "@/i18n/routes";
+import { type LocalizedPaths } from "@/i18n/routes";
 
 /** Title, description, canonical URL, hreflang alternates and social cards for one page. */
-export function pageMetadata(route: RouteName, locale: Locale, copy: MetaCopy): Metadata {
-  const path = routes[route][locale];
-  const languages = Object.fromEntries(locales.map((l) => [htmlLang[l], routes[route][l]]));
+export function pageMetadata(paths: LocalizedPaths, locale: Locale, copy: MetaCopy): Metadata {
+  const path = paths[locale];
+  const languages = Object.fromEntries(locales.map((l) => [htmlLang[l], paths[l]]));
 
   return {
     metadataBase: new URL(site.url),
     title: copy.title,
     description: copy.description,
-    alternates: { canonical: path, languages: { ...languages, "x-default": routes[route].en } },
+    alternates: { canonical: path, languages: { ...languages, "x-default": paths.en } },
     openGraph: {
       type: "website",
       url: path,

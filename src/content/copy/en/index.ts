@@ -1,7 +1,7 @@
 import { type Dictionary } from "@/content/types";
 import { about } from "./about";
 import { ai } from "./ai";
-import { caseStudy } from "./caseStudy";
+import { caseStudies } from "./caseStudies";
 import { contact } from "./contact";
 import { footer } from "./footer";
 import { hero } from "./hero";
@@ -23,5 +23,5 @@ export const en: Dictionary = {
   journey,
   writing,
   contact,
-  caseStudy,
+  caseStudies,
 };
