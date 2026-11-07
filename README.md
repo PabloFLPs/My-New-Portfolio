@@ -5,8 +5,10 @@ Portuguese ([/pt-br](https://pablofelps.vercel.app/pt-br)).
 
 It started in 2022 as a Create React App project. This version rebuilds it on the current stack, with the design
 approved in a Claude Design session: an editorial dark layout, serif display type and numbered sections. Projects,
-work history and writing are up to date, plus a section on how I work with AI and a case study for
-[Marksage](https://github.com/PabloFLPs/Marksage).
+work history and writing are up to date, plus a section on how I work with AI and a case study for each featured
+project: [Marksage](https://github.com/PabloFLPs/Marksage), [Zollama](https://github.com/PabloFLPs/Zollama),
+[Loreforge](https://github.com/PabloFLPs/loreforge) and
+[Route Flyover Studio](https://github.com/PabloFLPs/activies-flyover-studio).
 
 ## Stack
 
@@ -34,6 +36,7 @@ Copy and data live in `src/content`, separate from the components that render th
 - `content/data/` — facts that don't change with the language: links, stack, projects, journey, posts
 - `content/copy/en`, `content/copy/pt` — every piece of text, one file per section, typed by `content/types/`
 - `components/home/` — one component per home section, composed in the order set by `content/sections.ts`
+- `components/case-study/` — one generic page, `/projects/[slug]`, built from each project's case study copy
 
 Tests keep both languages in sync: same shape, same numbers, no missing copy. The full map and conventions are in
 [AGENTS.md](AGENTS.md), written for AI agents and humans alike.

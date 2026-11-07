@@ -21,8 +21,11 @@ dark layout with serif display type, a warm taupe accent and numbered sections (
   his LinkedIn. If a fact isn't in a source, ask instead of writing it.
 - **Design tokens only.** Use the colour and font names defined in `src/app/globals.css` (`canvas`, `surface`,
   `ink`, `muted`, `accent`, `accent-soft`, `font-serif`…). No raw hex values or default Tailwind hues in components.
-- **Contact goes through LinkedIn first.** Email stays available, one step down. No contact form.
+- **Contact is LinkedIn only.** No email address, no form, anywhere on the site.
+- **No project screenshots.** Projects are presented in type only, in the site's own visual language; the hero
+  photo and the GitHub avatar are the only images.
 - **No third-party requests at runtime** besides the GitHub avatar. Fonts are self-hosted via Fontsource.
+- **Every hover effect that moves something uses a transform**, never padding or margin, so text never re-wraps.
 
 ## Map
 
@@ -30,40 +33,46 @@ dark layout with serif display type, a warm taupe accent and numbered sections (
 src/
   app/
     globals.css            design tokens (@theme) + base styles — the only place colours and fonts are defined
-    (en)/                  English root layout: /, /projects/marksage
-    (pt)/pt-br/            Portuguese root layout: /pt-br, /pt-br/projects/marksage
+    (en)/                  English root layout: /, /projects/[slug]
+    (pt)/pt-br/            Portuguese root layout: /pt-br, /pt-br/projects/[slug]
     sitemap.ts, robots.ts
   components/
     ui/                    primitives: Container, SectionLabel, Display (serif + italic accent), UnderlineLink,
-                           Chip, ExternalLink (always use it for target="_blank")
+                           Chip, ToolIcon (tool logos), ExternalLink (always use it for target="_blank")
     layout/                RootShell (<html lang>), SiteHeader, MobileMenu (client), LanguageSwitch, SiteFooter
     home/                  one component per home section + HomePage, which composes them in `homeSections` order
-    case-study/            MarksageCaseStudy
+    case-study/            CaseStudyPage + CaseStudyBlocks: one generic page for every project
   content/
     sections.ts            home section order; the "01 —" numbers are derived from it
     data/                  language-independent facts: site links, stack, projects, journey, posts
     types/                 one copy type per section; `types/index.ts` aggregates them into `Dictionary`
     copy/en, copy/pt       one file per section; `index.ts` assembles the `Dictionary` for that language
-    content.test.ts        EN/PT parity, numbers, sentence length, PT-BR playbook terms
-  i18n/                    locales, routes (every page × language), date formatting
-  lib/                     page metadata (hreflang, Open Graph), the code-panel highlighter
-public/images/             hero photo and project visuals (prepared at 4:3, so cards never crop them)
+      caseStudies/         one file per project + `index.ts` with the labels shared by every case study
+    content.test.ts        EN/PT parity, numbers, sentence length, PT-BR playbook terms, copy for every id
+  i18n/                    locales, paths (homePath, projectPath, sectionHref), date formatting
+  lib/                     page metadata (hreflang, Open Graph), case study lookup and the [slug] route factory
+public/images/             the hero photo
 ```
 
 ## How to…
 
-- **Add or edit a featured project:** add it to `content/data/projects.ts` (slug, stack, href, a 4:3 visual), then
-  add `work.featured[slug]` in both `copy/en/work.ts` and `copy/pt/work.ts`. Images go in `public/images/projects/`
-  at exactly 4:3 — extend the canvas rather than crop.
-- **Add a journey item:** `content/data/journey.ts` (oldest first; omit `to` for the current role), then
-  `journey.items[id]` in both languages. The desktop timeline shows two rows of four; keep the count a multiple of 4
-  or adjust `rows` in `Journey.tsx`.
+- **Add a featured project:** add its slug to `projectSlugs` and an entry to `featuredProjects` in
+  `content/data/projects.ts`. Then, in both languages, add `work.featured[slug]` (tagline, description, part, fact)
+  and a case study in `copy/<locale>/caseStudies/<name>.ts`, registered in that folder's `index.ts`. The types
+  require all of it; the page at `/projects/<slug>` and its sitemap entry are generated.
+- **Write a case study:** sections are lists of blocks — `paragraph`, `list`, `table` (first column is the row
+  label) or `entries` (name + body). Every fact needs a source in the project's own repo; link to it under `more`.
+- **Add a journey item:** `content/data/journey.ts` (oldest first; omit `to` for the current role; `kind` is one of
+  technical, internship, degree, extension, fullTime), then `journey.items[id]` in both languages. The desktop
+  timeline shows two rows of four; keep the count a multiple of 4 or adjust `rows` in `Journey.tsx`.
+- **Add a tool to the stack:** `content/data/stack.ts`, in the group it belongs to; give it a logo in
+  `components/ui/ToolIcon.tsx` (react-icons `si` set) or it falls back to a neutral glyph.
 - **Add a post:** `content/data/writing.ts`, newest first. Titles stay in the language they were published in.
 - **Add a home section:** create `components/home/<Name>.tsx`, its copy type in `content/types/`, copy in both
   locales, register it in `types/index.ts` and both `copy/*/index.ts`, add its id to `content/sections.ts` and to
   the `sections` map in `HomePage.tsx`.
-- **Add a page:** add it to `i18n/routes.ts` first, then create the route file under both `(en)` and `(pt)/pt-br`,
-  using `pageMetadata()` for metadata. The sitemap picks it up from `routes`.
+- **Add a page:** add a path helper to `i18n/routes.ts`, create the route file under both `(en)` and `(pt)/pt-br`,
+  use `pageMetadata()` for metadata, and add it to `app/sitemap.ts`.
 
 ## PT-BR voice
 
@@ -85,7 +94,7 @@ Follows Pablo's PT-BR Writing Playbook (Obsidian vault, `_Playbooks/PT-BR Writin
 ```bash
 npm run dev          # http://localhost:3000
 npm run check        # format:check + lint + typecheck + test — run before every commit
-npm run build        # production build; every page must stay "○ (Static)"
+npm run build        # production build; every page must stay static (○ or ●)
 npm run format       # Prettier (sorts Tailwind classes too)
 ```
 
@@ -98,6 +107,6 @@ commit building and passing `npm run check`. Husky runs lint-staged on commit an
 
 - Hard-code user-facing text in a component, or change one language without the other.
 - Add a dependency for something a few lines of code can do, or a runtime call to a third-party service.
-- Crop a project visual with `object-cover` on an image that isn't 4:3.
+- Add project screenshots, an email address or a contact form.
 - Invent metrics, roles or dates. Mark anything uncertain and ask.
 - Push. Pablo reviews and pushes himself.
