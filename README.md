@@ -1,22 +1,43 @@
-# cra-template-tailwindcss-typescript
+# Pablo Felipe — portfolio
 
-A streamlined [Tailwind CSS v3.x](https://tailwindcss.com) template for [Create React App](https://github.com/facebook/create-react-app) in [TypeScript](https://www.typescriptlang.org/).
+My personal site, live at **[pablofelps.vercel.app](https://pablofelps.vercel.app)**, in English and Brazilian
+Portuguese ([/pt-br](https://pablofelps.vercel.app/pt-br)).
 
-> This template installs and sets up [Tailwind CSS](https://tailwindcss.com) with TypeScript support.
+It started in 2022 as a Create React App project. This version rebuilds it on the current stack, with the design
+approved in a Claude Design session: an editorial dark layout, serif display type and numbered sections. Projects,
+work history and writing are up to date, plus a section on how I work with AI and a case study for
+[Marksage](https://github.com/PabloFLPs/Marksage).
 
-## Usage
+## Stack
+
+- **Next.js 16** (App Router; every page prerendered as static HTML)
+- **React 19**, **TypeScript** (strict)
+- **Tailwind CSS 4**, with the design tokens in `src/app/globals.css`
+- **Newsreader**, **Hanken Grotesk** and **JetBrains Mono**, self-hosted via Fontsource
+- **Vitest** for content and helper tests; **ESLint**, **Prettier**, **Husky**, **commitlint**
+
+## Run it
 
 ```bash
-npx create-react-app --template tailwindcss-typescript
+npm install
+npm run dev        # http://localhost:3000
+npm run check      # format, lint, typecheck and tests
+npm run build
 ```
 
-## Credits
+Node 20.9 or newer (`.nvmrc` pins 22).
 
-This project was made possible thanks to the following projects.
+## How it's organized
 
-1. [GeoffSelby/cra-template-tailwindcss](https://github.com/GeoffSelby/cra-template-tailwindcss) - A streamlined Tailwind CSS template for Create React App (in JavaScript).
-2. [cra-template-typescript](https://github.com/facebook/create-react-app/tree/master/packages/cra-template-typescript) - An official TypeScript template for create-react-app.
+Copy and data live in `src/content`, separate from the components that render them:
 
-## License
+- `content/data/` — facts that don't change with the language: links, stack, projects, journey, posts
+- `content/copy/en`, `content/copy/pt` — every piece of text, one file per section, typed by `content/types/`
+- `components/home/` — one component per home section, composed in the order set by `content/sections.ts`
 
-MIT © [Sung M. Kim](https://sung.codes)
+Tests keep both languages in sync: same shape, same numbers, no missing copy. The full map and conventions are in
+[AGENTS.md](AGENTS.md), written for AI agents and humans alike.
+
+## Deploy
+
+Vercel, with the **Next.js** framework preset and default build settings. No environment variables.

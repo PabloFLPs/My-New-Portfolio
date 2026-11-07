@@ -1,0 +1,13 @@
+---
+description: Editing copy, projects, journey items or posts
+globs: src/content/**
+alwaysApply: false
+---
+
+- Facts that don't change with the language (URLs, years, stacks, dates) go in `src/content/data/`.
+- Text goes in `src/content/copy/en/<section>.ts` and `src/content/copy/pt/<section>.ts`, typed by
+  `src/content/types/<section>.ts`. Update both languages in the same change.
+- `npm test` checks: same shape in both languages, same numbers per section (Brazilian number format in PT),
+  sentences ≤ 40 words, banned PT-BR terms, and copy for every id in `data/`.
+- PT-BR: "você", short active sentences, "para" (not "pra"), nouns for headings, "treinamento", "conjunto de
+  teste", "critério de aprovação", "modelo pequeno", "executar" (not "rodar"). Details in AGENTS.md.
