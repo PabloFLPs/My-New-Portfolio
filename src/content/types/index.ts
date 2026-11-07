@@ -8,6 +8,7 @@ import { type AiCopy } from "./ai";
 import { type CaseStudyCopy } from "./caseStudy";
 import { type FooterCopy } from "./footer";
 import { type HeroCopy } from "./hero";
+import { type JourneyCopy } from "./journey";
 import { type NavCopy } from "./nav";
 import { type MetaCopy } from "./shared";
 import { type WorkCopy } from "./work";
@@ -22,5 +23,6 @@ export type Dictionary = {
   about: AboutCopy;
   ai: AiCopy;
   work: WorkCopy;
+  journey: JourneyCopy;
   caseStudy: CaseStudyCopy;
 };

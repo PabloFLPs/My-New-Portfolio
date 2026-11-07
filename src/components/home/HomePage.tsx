@@ -8,6 +8,7 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { About } from "./About";
 import { AiWorkflow } from "./AiWorkflow";
 import { Hero } from "./Hero";
+import { Journey } from "./Journey";
 import { SelectedWork } from "./SelectedWork";
 
 export function HomePage({ locale }: { locale: Locale }) {
@@ -17,6 +18,7 @@ export function HomePage({ locale }: { locale: Locale }) {
     about: <About about={t.about} />,
     ai: <AiWorkflow ai={t.ai} caseStudyHref={routeFor("marksage", locale)} />,
     work: <SelectedWork work={t.work} locale={locale} />,
+    journey: <Journey journey={t.journey} />,
   };
 
   const header = (

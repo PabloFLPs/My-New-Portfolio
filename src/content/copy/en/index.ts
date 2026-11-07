@@ -4,9 +4,10 @@ import { ai } from "./ai";
 import { caseStudy } from "./caseStudy";
 import { footer } from "./footer";
 import { hero } from "./hero";
+import { journey } from "./journey";
 import { meta } from "./meta";
 import { nav } from "./nav";
 import { work } from "./work";
 
 /** English is the source of truth for facts: every number, name and claim in `pt` must match it. */
-export const en: Dictionary = { meta, nav, footer, hero, about, ai, work, caseStudy };
+export const en: Dictionary = { meta, nav, footer, hero, about, ai, work, journey, caseStudy };
