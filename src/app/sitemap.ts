@@ -2,12 +2,12 @@ import { type MetadataRoute } from "next";
 import { site } from "@/content/data/site";
 import { htmlLang, locales, type Locale } from "@/i18n/locales";
 import { homePath, projectPath } from "@/i18n/routes";
-import { caseStudySlugs } from "@/lib/caseStudies";
+import { projectSlugs } from "@/content/data/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages: ((locale: Locale) => string)[] = [
     homePath,
-    ...caseStudySlugs().map((slug) => (locale: Locale) => projectPath(slug, locale)),
+    ...projectSlugs.map((slug) => (locale: Locale) => projectPath(slug, locale)),
   ];
   return pages.map((pathFor) => ({
     url: `${site.url}${pathFor("en")}`,

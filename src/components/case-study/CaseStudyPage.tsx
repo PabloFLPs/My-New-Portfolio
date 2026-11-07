@@ -28,7 +28,6 @@ export function CaseStudyPage({ locale, slug }: { locale: Locale; slug: ProjectS
   const t = getDictionary(locale);
   const labels = t.caseStudies.labels;
   const study = t.caseStudies.studies[slug];
-  if (!study) return null;
   const project = getFeaturedProject(slug);
 
   return (

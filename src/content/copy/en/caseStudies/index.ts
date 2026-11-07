@@ -1,5 +1,8 @@
 import { type CaseStudiesCopy } from "@/content/types/caseStudy";
+import { loreforge } from "./loreforge";
 import { marksage } from "./marksage";
+import { routeFlyoverStudio } from "./routeFlyoverStudio";
+import { zollama } from "./zollama";
 
 export const caseStudies: CaseStudiesCopy = {
   labels: {
@@ -9,5 +12,5 @@ export const caseStudies: CaseStudiesCopy = {
     lessons: "What I took from it",
     more: "Want the full detail?",
   },
-  studies: { marksage },
+  studies: { marksage, zollama, loreforge, "route-flyover-studio": routeFlyoverStudio },
 };

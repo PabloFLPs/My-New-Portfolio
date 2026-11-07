@@ -33,5 +33,6 @@ export type CaseStudyLabels = {
 
 export type CaseStudiesCopy = {
   labels: CaseStudyLabels;
-  studies: Partial<Record<ProjectSlug, CaseStudyCopy>>;
+  /** Every featured project has a case study, in both languages. */
+  studies: Record<ProjectSlug, CaseStudyCopy>;
 };
