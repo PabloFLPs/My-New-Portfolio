@@ -4,6 +4,7 @@
  * language (URLs, years, stacks) live in `content/data/` instead.
  */
 import { type AboutCopy } from "./about";
+import { type CaseStudyCopy } from "./caseStudy";
 import { type FooterCopy } from "./footer";
 import { type HeroCopy } from "./hero";
 import { type NavCopy } from "./nav";
@@ -19,4 +20,5 @@ export type Dictionary = {
   hero: HeroCopy;
   about: AboutCopy;
   work: WorkCopy;
+  caseStudy: CaseStudyCopy;
 };
