@@ -9,7 +9,7 @@ export type AiCopy = {
   loop: { step: string; body: string }[];
   ownershipTitle: string;
   ownership: string[];
-  /** A concrete example, ending in a link to the case study. */
-  example: { text: string; link: string };
+  /** A worked example of the ownership list, ending in a link to its case study. */
+  example: { label: string; title: string; body: string[]; outcomes: string[]; link: string };
   articleLink: string;
 };

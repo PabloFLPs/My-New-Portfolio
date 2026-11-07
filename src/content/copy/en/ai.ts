@@ -54,8 +54,19 @@ export const ai: AiCopy = {
     "Reading the diff before it's committed.",
   ],
   example: {
-    text: "In Marksage, three trained models were left out of the app because they missed a bar set before training.",
-    link: "The numbers are in the case study.",
+    label: "in practice · Marksage",
+    title: "A bar written down before the run",
+    body: [
+      "Marksage is my Markdown editor. Its assistant suggests fixes as you write, and I trained small models to help it.",
+      "Before each training run, I wrote down what a model had to do to earn a place in the app: do better than the hand-written rules, on repositories it had never seen.",
+      "Two models earned it and shipped. Three stayed out:",
+    ],
+    outcomes: [
+      "Structure hints met the bar by one line in 227. Not worth a download.",
+      "Paste types were less precise than the rules, so the rules stayed.",
+      "A third version of the code model didn't fix what it was built for.",
+    ],
+    link: "Read the Marksage case study",
   },
   articleLink: "The long version, on DEV",
 };

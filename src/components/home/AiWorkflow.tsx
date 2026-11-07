@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { type AiCopy } from "@/content/types/ai";
 import { contextEngineeringArticle } from "@/content/data/writing";
 import { sectionNumber } from "@/content/sections";
@@ -65,15 +66,31 @@ export function AiWorkflow({ ai, caseStudyHref }: { ai: AiCopy; caseStudyHref: s
                 </li>
               ))}
             </ul>
-            <p className="max-w-[620px] text-base leading-[1.6] text-muted">
-              {ai.example.text}{" "}
-              <a
+            <figure className="flex flex-col gap-4 rounded bg-surface p-6 md:p-8">
+              <p className="font-mono text-[11px] leading-none text-accent-soft">{ai.example.label}</p>
+              <h4 className="font-serif text-2xl leading-tight md:text-[28px]">{ai.example.title}</h4>
+              {ai.example.body.map((paragraph) => (
+                <p key={paragraph} className="text-[15px] leading-[1.6] text-muted md:text-base">
+                  {paragraph}
+                </p>
+              ))}
+              <ul className="flex flex-col gap-2">
+                {ai.example.outcomes.map((outcome) => (
+                  <li key={outcome} className="flex gap-3 text-[15px] leading-[1.5] text-ink-soft">
+                    <span className="text-accent" aria-hidden="true">
+                      —
+                    </span>
+                    {outcome}
+                  </li>
+                ))}
+              </ul>
+              <Link
                 href={caseStudyHref}
-                className="text-ink-soft underline decoration-accent underline-offset-4 hover:text-accent-soft"
+                className="mt-2 self-start border-b border-accent pb-1 text-[15px] font-medium text-ink-soft transition-colors hover:text-accent-soft"
               >
-                {ai.example.link}
-              </a>
-            </p>
+                {ai.example.link} <span aria-hidden="true">→</span>
+              </Link>
+            </figure>
             <UnderlineLink
               href={contextEngineeringArticle.url}
               external

@@ -51,8 +51,19 @@ export const ai: AiCopy = {
     "A leitura do diff antes do commit.",
   ],
   example: {
-    text: "No Marksage, três modelos treinados ficaram fora do app porque não atingiram um critério definido antes do treinamento.",
-    link: "Os números estão no estudo de caso.",
+    label: "na prática · Marksage",
+    title: "Um critério definido de antemão",
+    body: [
+      "O Marksage é o meu editor de Markdown. O assistente dele sugere correções enquanto você escreve, e eu treinei modelos pequenos para ajudar nisso.",
+      "Antes de cada rodada de treinamento, defini o que um modelo precisava fazer para entrar no app: superar as regras heurísticas em repositórios que ele nunca tinha visto.",
+      "Dois modelos conseguiram e estão no app. Três ficaram de fora:",
+    ],
+    outcomes: [
+      "O de dicas de formatação atingiu o critério por uma linha em 227. Não valia um download.",
+      "O de tipos de conteúdo colado teve menos precisão que as regras, então as regras ficaram.",
+      "Uma terceira versão do modelo de código não resolveu o problema para o qual foi criada.",
+    ],
+    link: "Ler o estudo de caso do Marksage",
   },
   articleLink: "A versão completa, no DEV (em inglês)",
 };
