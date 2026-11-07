@@ -4,9 +4,6 @@ export const contact: ContactCopy = {
   label: "Contato",
   heading: { text: "Vamos", accent: "conversar." },
   intro:
-    "Estou aberto a conversas sobre sistemas escaláveis, integrações em tempo real e engenharia com apoio de IA. O LinkedIn é o melhor lugar para falar comigo.",
+    "Estou aberto a conversas sobre sistemas escaláveis, integrações em tempo real e engenharia com apoio de IA. Me mande uma mensagem no LinkedIn.",
   linkedinCta: "Me chame no LinkedIn",
-  emailLead: "ou por e-mail",
-  copy: "copiar e-mail",
-  copied: "copiado ✓",
 };

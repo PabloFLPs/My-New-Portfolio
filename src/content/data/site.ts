@@ -2,7 +2,6 @@
 export const site = {
   name: "Pablo Felipe",
   url: "https://pablofelps.vercel.app",
-  email: "pablofelipe1999@hotmail.com",
   avatar: "https://avatars.githubusercontent.com/u/58035837?v=4",
   repo: "https://github.com/PabloFLPs/My-New-Portfolio",
   links: {
