@@ -6,6 +6,7 @@ import { routeFor, sectionHref } from "@/i18n/routes";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { About } from "./About";
+import { AiWorkflow } from "./AiWorkflow";
 import { Hero } from "./Hero";
 import { SelectedWork } from "./SelectedWork";
 
@@ -14,6 +15,7 @@ export function HomePage({ locale }: { locale: Locale }) {
 
   const sections: Record<HomeSectionId, ReactNode> = {
     about: <About about={t.about} />,
+    ai: <AiWorkflow ai={t.ai} caseStudyHref={routeFor("marksage", locale)} />,
     work: <SelectedWork work={t.work} locale={locale} />,
   };
 
