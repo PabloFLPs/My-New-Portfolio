@@ -7,12 +7,14 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { About } from "./About";
 import { Hero } from "./Hero";
+import { SelectedWork } from "./SelectedWork";
 
 export function HomePage({ locale }: { locale: Locale }) {
   const t = getDictionary(locale);
 
   const sections: Record<HomeSectionId, ReactNode> = {
     about: <About about={t.about} />,
+    work: <SelectedWork work={t.work} locale={locale} />,
   };
 
   const header = (

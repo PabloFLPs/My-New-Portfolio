@@ -8,6 +8,7 @@ import { type FooterCopy } from "./footer";
 import { type HeroCopy } from "./hero";
 import { type NavCopy } from "./nav";
 import { type MetaCopy } from "./shared";
+import { type WorkCopy } from "./work";
 
 export type { DisplayHeading, MetaCopy } from "./shared";
 
@@ -17,4 +18,5 @@ export type Dictionary = {
   footer: FooterCopy;
   hero: HeroCopy;
   about: AboutCopy;
+  work: WorkCopy;
 };
