@@ -92,16 +92,31 @@ export function SelectedWork({ work, locale }: { work: WorkCopy; locale: Locale 
           })}
         </ul>
 
-        <div className="flex flex-col gap-4 md:mt-6">
-          <h3 className="text-sm text-muted">{work.moreTitle}</h3>
-          <ul className="flex flex-col border-b border-line">
+        {/* Collapsed by default: there for the curious, out of the way for everyone else. */}
+        <details className="group border-y border-line md:mt-6">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-5 transition-colors hover:text-ink [&::-webkit-details-marker]:hidden">
+            <span className="flex flex-col gap-1.5 md:flex-row md:items-baseline md:gap-4">
+              <span className="text-[15px] text-ink-soft">
+                {work.moreTitle}{" "}
+                <span className="font-mono text-xs text-faint">· {otherProjects.length}</span>
+              </span>
+              <span className="font-mono text-xs text-faint">{work.moreHint}</span>
+            </span>
+            <span
+              aria-hidden="true"
+              className="font-mono text-lg leading-none text-accent-soft transition-transform duration-300 group-open:rotate-45"
+            >
+              +
+            </span>
+          </summary>
+          <ul className="flex flex-col pb-2">
             {otherProjects.map((project) => (
               <li key={project.slug} className="border-t border-line">
                 <ExternalLink
                   href={project.href}
-                  className="flex items-baseline justify-between gap-3 py-4 transition-[padding] duration-300 hover:text-ink md:grid md:grid-cols-[220px_1fr_240px_24px] md:gap-6 md:py-[22px] md:hover:pl-3"
+                  className="flex items-baseline justify-between gap-3 py-4 transition-[padding] duration-300 hover:text-ink md:grid md:grid-cols-[220px_1fr_240px_24px] md:gap-6 md:py-[18px] md:hover:pl-3"
                 >
-                  <span className="font-serif text-[19px] leading-[1.2] md:text-[22px]">{project.name}</span>
+                  <span className="font-serif text-[19px] leading-[1.2] md:text-xl">{project.name}</span>
                   <span className="hidden text-[15px] text-muted md:block">
                     {work.more[project.slug]?.description}
                   </span>
@@ -115,7 +130,7 @@ export function SelectedWork({ work, locale }: { work: WorkCopy; locale: Locale 
               </li>
             ))}
           </ul>
-        </div>
+        </details>
       </Container>
     </section>
   );

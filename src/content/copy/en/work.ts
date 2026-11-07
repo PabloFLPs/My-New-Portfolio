@@ -36,6 +36,7 @@ export const work: WorkCopy = {
     },
   },
   moreTitle: "Earlier projects",
+  moreHint: "2021–2022 · courses, hackathons and first deploys",
   more: {
     diversight: { description: "Back-end for a diversity analytics product, ioasys CAMP 2021" },
     "send-email-api": { description: "Email API behind my first portfolio's contact form" },
