@@ -6,7 +6,8 @@ export type WorkCopy = {
   heading: DisplayHeading;
   partLabel: string;
   kinds: Record<ProjectKind, string>;
-  featured: Record<string, { description: string; part: string; visualAlt: string }>;
+  /** Per featured project: a one-line hook, what it is, my part in it, and one fact worth remembering. */
+  featured: Record<string, { tagline: string; description: string; part: string; fact: string }>;
   moreTitle: string;
   more: Record<string, { description: string }>;
 };

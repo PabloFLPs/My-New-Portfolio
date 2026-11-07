@@ -3,10 +3,6 @@ import { type RouteName } from "@/i18n/routes";
 /** What the project card links to, and the word shown next to its name ("Code ↗", "Case study ↗"). */
 export type ProjectKind = "caseStudy" | "code" | "live";
 
-export type ProjectVisual =
-  | { type: "image"; src: string; width: number; height: number }
-  | { type: "code"; language: "ts"; file: string; code: string };
-
 export type FeaturedProject = {
   slug: string;
   name: string;
@@ -14,7 +10,6 @@ export type FeaturedProject = {
   /** Internal page for case studies; external URL otherwise. */
   href: { route: RouteName } | { url: string };
   stack: string[];
-  visual: ProjectVisual;
 };
 
 export type OtherProject = { slug: string; name: string; stack: string[]; href: string };
@@ -26,7 +21,6 @@ export const featuredProjects: FeaturedProject[] = [
     kind: "caseStudy",
     href: { route: "marksage" },
     stack: ["React", "TypeScript", "Vite", "In-browser ML"],
-    visual: { type: "image", src: "/images/projects/marksage-editor.jpg", width: 1600, height: 1200 },
   },
   {
     slug: "zollama",
@@ -34,29 +28,6 @@ export const featuredProjects: FeaturedProject[] = [
     kind: "code",
     href: { url: "https://github.com/PabloFLPs/Zollama" },
     stack: ["TypeScript", "Zod", "Ollama"],
-    visual: {
-      type: "code",
-      language: "ts",
-      file: "example.ts",
-      code: `const CommitSchema = z.object({
-  type: z.enum(["feat", "fix", "chore", "docs", "refactor", "test"]),
-  scope: z.string().nullable(),
-  summary: z.string().max(72),
-  breaking: z.boolean(),
-});
-
-const client = new Zollama();
-
-const commit = await client.generate(
-  CommitSchema,
-  prompt\`
-    Write a conventional-commit message for this diff:
-    …
-  \`,
-);
-
-// commit is fully typed as z.infer<typeof CommitSchema> — no casting.`,
-    },
   },
   {
     slug: "loreforge",
@@ -64,28 +35,6 @@ const commit = await client.generate(
     kind: "code",
     href: { url: "https://github.com/PabloFLPs/loreforge" },
     stack: ["Next.js", "React", "Prisma", "Socket.IO"],
-    visual: {
-      type: "code",
-      language: "ts",
-      file: "tactics/lineOfSight.ts",
-      code: `/**
- * Whether sight travels from \`a\` to \`b\` unobstructed.
- *
- * Bresenham walk; a diagonal step is only blocked when *both*
- * flanking tiles block vision, so a token can see past a
- * single wall corner.
- */
-export function hasLineOfSight(map: TacticalMapState, a: Cell, b: Cell): boolean {
-  if (a.x === b.x && a.y === b.y) return true;
-  // …
-    if (diagonal) {
-      const sideA = { x: x0 + sx, y: y0 };
-      const sideB = { x: x0, y: y0 + sy };
-      if (blocksVisionAt(map, sideA) && blocksVisionAt(map, sideB)) return false;
-    }
-  // …
-}`,
-    },
   },
   {
     slug: "route-flyover-studio",
@@ -93,7 +42,6 @@ export function hasLineOfSight(map: TacticalMapState, a: Cell, b: Cell): boolean
     kind: "code",
     href: { url: "https://github.com/PabloFLPs/activies-flyover-studio" },
     stack: ["Next.js", "TypeScript", "MapLibre GL", "WebCodecs"],
-    visual: { type: "image", src: "/images/projects/route-flyover-studio.jpg", width: 1200, height: 900 },
   },
 ];
 

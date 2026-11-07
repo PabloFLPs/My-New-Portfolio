@@ -7,28 +7,32 @@ export const work: WorkCopy = {
   kinds: { caseStudy: "Case study", code: "Code", live: "Live" },
   featured: {
     marksage: {
+      tagline: "The Markdown editor that notices.",
       description:
         "A local-first Markdown editor that suggests fixes as you write: rules plus two 385 KB models trained for it, running in the browser. Your files never leave it.",
       part: "Solo project · product, models, measurement and code",
-      visualAlt: "Marksage's editor suggesting a language for a code block",
+      fact: "385 KB models · ~0.1 ms per decision",
     },
     zollama: {
+      tagline: "Treat model output like an untrusted HTTP body.",
       description:
-        "A typed SDK for structured output from AI models, local-first through Ollama or with any major provider. Model output is treated like an untrusted HTTP body: a Zod schema is the contract, and failures are repaired or retried.",
+        "A typed SDK for structured output from AI models, local-first through Ollama or with any major provider. A Zod schema is the contract: output that breaks it is repaired or retried, never silently trusted.",
       part: "Author and maintainer · open source",
-      visualAlt: "Zollama example: a Zod schema and a typed generate() call",
+      fact: "2 runtime dependencies · 6 providers",
     },
     loreforge: {
+      tagline: "Campaigns, maps and a copilot that remembers.",
       description:
         "An AI-first tabletop RPG platform: campaign worlds, story graphs and live multiplayer sessions on tactical maps, with a copilot that remembers the whole campaign.",
       part: "Author · from the grid engine to the AI copilot",
-      visualAlt: "Loreforge's line-of-sight function",
+      fact: "346 tests · 1 grid engine on server and browser",
     },
     "route-flyover-studio": {
+      tagline: "Your run, as a cinematic flyover.",
       description:
         "Turns a GPS activity file into a cinematic 9:16 flyover video with an animated stats HUD. Parsing, 3D map rendering and MP4 encoding all run in the browser.",
       part: "Author · rebuilt a prototype into a full app",
-      visualAlt: "Route Flyover Studio: cinematic flyover videos from GPS activities",
+      fact: "1080 × 1920 MP4 · encoded in the browser",
     },
   },
   moreTitle: "Earlier projects",

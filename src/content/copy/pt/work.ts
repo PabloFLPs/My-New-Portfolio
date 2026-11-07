@@ -7,28 +7,32 @@ export const work: WorkCopy = {
   kinds: { caseStudy: "Estudo de caso", code: "Código", live: "Ao vivo" },
   featured: {
     marksage: {
+      tagline: "O editor de Markdown atento aos detalhes.",
       description:
         "Um editor de Markdown local-first que sugere correções enquanto você escreve: regras heurísticas e dois modelos de 385 KB treinados para ele, executados no navegador. Seus arquivos nunca saem dele.",
       part: "Projeto solo · produto, modelos, medição e código",
-      visualAlt: "O editor do Marksage sugerindo a linguagem de um bloco de código",
+      fact: "modelos de 385 KB · ~0,1 ms por decisão",
     },
     zollama: {
+      tagline: "Trate a saída de um modelo como um body HTTP não confiável.",
       description:
-        "Um SDK tipado para saída estruturada de modelos de IA, local-first via Ollama ou com qualquer um dos principais provedores. A saída do modelo é tratada como um body HTTP não confiável: um schema Zod é o contrato, e as falhas são corrigidas ou refeitas.",
+        "Um SDK tipado para saída estruturada de modelos de IA, local-first via Ollama ou com qualquer um dos principais provedores. Um schema Zod é o contrato: a saída que não o cumpre é corrigida ou refeita, nunca aceita em silêncio.",
       part: "Autor e mantenedor · open source",
-      visualAlt: "Exemplo do Zollama: um schema Zod e uma chamada generate() tipada",
+      fact: "2 dependências em runtime · 6 provedores",
     },
     loreforge: {
+      tagline: "Campanhas, mapas e um copiloto que lembra de tudo.",
       description:
         "Uma plataforma de RPG de mesa pensada para IA: mundos de campanha, grafos de história e sessões multiplayer ao vivo em mapas táticos, com um copiloto que lembra da campanha inteira.",
       part: "Autor · da engine de grid ao copiloto de IA",
-      visualAlt: "A função de linha de visão do Loreforge",
+      fact: "346 testes · 1 engine de grid no servidor e no navegador",
     },
     "route-flyover-studio": {
+      tagline: "Sua corrida, em um sobrevoo cinematográfico.",
       description:
         "Transforma um arquivo de atividade GPS em um vídeo cinematográfico 9:16, com um HUD animado de estatísticas. A leitura do arquivo, a renderização do mapa 3D e o encoding em MP4 acontecem no navegador.",
       part: "Autor · transformou um protótipo em um app completo",
-      visualAlt: "Route Flyover Studio: vídeos de sobrevoo a partir de atividades GPS",
+      fact: "MP4 em 1080 × 1920 · encoding no navegador",
     },
   },
   moreTitle: "Primeiros projetos",

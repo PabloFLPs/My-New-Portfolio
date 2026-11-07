@@ -9,7 +9,6 @@ import { Container } from "@/components/ui/Container";
 import { Display } from "@/components/ui/Display";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { ProjectVisual } from "./ProjectVisual";
 
 function CardLink({
   project,
@@ -20,7 +19,7 @@ function CardLink({
   locale: Locale;
   children: ReactNode;
 }) {
-  const className = "group flex flex-col gap-3 md:gap-5";
+  const className = "group flex h-full flex-col gap-4 border-t border-line pt-6 md:pt-8";
   if ("route" in project.href) {
     return (
       <Link href={routeFor(project.href.route, locale)} className={className}>
@@ -35,6 +34,7 @@ function CardLink({
   );
 }
 
+/** Typographic project cards: no screenshots, so every project reads in the site's own visual language. */
 export function SelectedWork({ work, locale }: { work: WorkCopy; locale: Locale }) {
   return (
     <section id="work" className="pb-14 md:pb-28">
@@ -49,28 +49,41 @@ export function SelectedWork({ work, locale }: { work: WorkCopy; locale: Locale 
           </SectionLabel>
         </div>
 
-        <ul className="grid gap-12 md:grid-cols-2 md:gap-x-10 md:gap-y-14">
-          {featuredProjects.map((project) => {
+        <ul className="grid gap-12 md:grid-cols-2 md:gap-x-12 md:gap-y-20">
+          {featuredProjects.map((project, index) => {
             const copy = work.featured[project.slug];
             if (!copy) return null;
             const internal = "route" in project.href;
             return (
               <li key={project.slug} className="min-w-0">
                 <CardLink project={project} locale={locale}>
-                  <ProjectVisual visual={project.visual} alt={copy.visualAlt} />
-                  <div className="flex items-baseline justify-between gap-6">
-                    <h3 className="font-serif text-2xl leading-[1.15] md:text-[30px]">{project.name}</h3>
-                    <span className="text-[13px] whitespace-nowrap text-accent-soft transition-colors group-hover:text-ink md:text-sm">
-                      {work.kinds[project.kind]} <span aria-hidden="true">{internal ? "→" : "↗"}</span>
+                  <div className="flex items-baseline justify-between gap-6 font-mono text-xs leading-none">
+                    <span className="text-faint">{String(index + 1).padStart(2, "0")}</span>
+                    <span className="whitespace-nowrap text-accent-soft transition-colors group-hover:text-ink">
+                      {work.kinds[project.kind]}{" "}
+                      <span
+                        aria-hidden="true"
+                        className="inline-block transition-transform duration-300 group-hover:translate-x-1"
+                      >
+                        {internal ? "→" : "↗"}
+                      </span>
                     </span>
                   </div>
-                  <p className="text-[15px] leading-[1.55] text-muted md:text-base md:leading-[1.6]">
-                    {copy.description}
+                  <h3 className="font-serif text-[40px] leading-none tracking-[-0.02em] transition-colors duration-300 group-hover:text-accent-soft md:text-[52px]">
+                    {project.name}
+                  </h3>
+                  <p className="font-serif text-xl leading-snug text-accent-soft italic md:text-2xl">
+                    {copy.tagline}
+                  </p>
+                  <p className="text-[15px] leading-[1.6] text-muted md:text-base">{copy.description}</p>
+                  <p className="flex items-center gap-2.5 font-mono text-xs leading-normal text-ink-soft">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+                    {copy.fact}
                   </p>
                   <p className="text-sm leading-normal text-ink-soft md:text-[15px]">
                     <span className="text-accent-soft">{work.partLabel}</span> {copy.part}
                   </p>
-                  <p className="hidden font-mono text-xs leading-none tracking-[0.04em] text-faint uppercase md:block">
+                  <p className="mt-auto font-mono text-xs leading-none tracking-[0.04em] text-faint uppercase">
                     {project.stack.join(" · ")}
                   </p>
                 </CardLink>
