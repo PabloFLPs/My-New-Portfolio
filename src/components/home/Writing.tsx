@@ -37,7 +37,7 @@ export function Writing({ writing, locale }: { writing: WritingCopy; locale: Loc
               <li key={post.url} className="border-t border-line">
                 <ExternalLink
                   href={post.url}
-                  className="flex flex-col gap-2 py-[18px] transition-[padding] duration-300 hover:text-ink md:grid md:grid-cols-[120px_1fr_90px] md:items-baseline md:gap-6 md:py-6 md:hover:pl-3"
+                  className="flex flex-col gap-2 py-[18px] transition-transform duration-300 hover:text-ink md:grid md:grid-cols-[120px_1fr_90px] md:items-baseline md:gap-6 md:py-6 md:hover:translate-x-3"
                 >
                   <span className="font-mono text-xs leading-none text-muted">
                     {date}

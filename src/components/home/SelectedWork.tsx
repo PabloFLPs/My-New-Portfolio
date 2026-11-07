@@ -94,7 +94,7 @@ export function SelectedWork({ work, locale }: { work: WorkCopy; locale: Locale 
               <li key={project.slug} className="border-t border-line">
                 <ExternalLink
                   href={project.href}
-                  className="flex items-baseline justify-between gap-3 py-4 transition-[padding] duration-300 hover:text-ink md:grid md:grid-cols-[220px_1fr_240px_24px] md:gap-6 md:py-[18px] md:hover:pl-3"
+                  className="flex items-baseline justify-between gap-3 py-4 transition-transform duration-300 hover:text-ink md:grid md:grid-cols-[220px_1fr_240px_24px] md:gap-6 md:py-[18px] md:hover:translate-x-3"
                 >
                   <span className="font-serif text-[19px] leading-[1.2] md:text-xl">{project.name}</span>
                   <span className="hidden text-[15px] text-muted md:block">
