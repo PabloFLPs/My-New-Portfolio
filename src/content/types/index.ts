@@ -3,6 +3,7 @@
  * so a missing or extra string in one language is a type error. Facts that don't change with the
  * language (URLs, years, stacks) live in `content/data/` instead.
  */
+import { type AboutCopy } from "./about";
 import { type FooterCopy } from "./footer";
 import { type HeroCopy } from "./hero";
 import { type NavCopy } from "./nav";
@@ -15,4 +16,5 @@ export type Dictionary = {
   nav: NavCopy;
   footer: FooterCopy;
   hero: HeroCopy;
+  about: AboutCopy;
 };
