@@ -12,6 +12,7 @@ import { type JourneyCopy } from "./journey";
 import { type NavCopy } from "./nav";
 import { type MetaCopy } from "./shared";
 import { type WorkCopy } from "./work";
+import { type WritingCopy } from "./writing";
 
 export type { DisplayHeading, MetaCopy } from "./shared";
 
@@ -24,5 +25,6 @@ export type Dictionary = {
   ai: AiCopy;
   work: WorkCopy;
   journey: JourneyCopy;
+  writing: WritingCopy;
   caseStudy: CaseStudyCopy;
 };

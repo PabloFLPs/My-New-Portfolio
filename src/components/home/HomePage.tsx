@@ -10,6 +10,7 @@ import { AiWorkflow } from "./AiWorkflow";
 import { Hero } from "./Hero";
 import { Journey } from "./Journey";
 import { SelectedWork } from "./SelectedWork";
+import { Writing } from "./Writing";
 
 export function HomePage({ locale }: { locale: Locale }) {
   const t = getDictionary(locale);
@@ -19,6 +20,7 @@ export function HomePage({ locale }: { locale: Locale }) {
     ai: <AiWorkflow ai={t.ai} caseStudyHref={routeFor("marksage", locale)} />,
     work: <SelectedWork work={t.work} locale={locale} />,
     journey: <Journey journey={t.journey} />,
+    writing: <Writing writing={t.writing} locale={locale} />,
   };
 
   const header = (
