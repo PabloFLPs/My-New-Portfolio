@@ -9,11 +9,6 @@ import { ExternalLink } from "@/components/ui/ExternalLink";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
 export function About({ about }: { about: AboutCopy }) {
-  const groups = [
-    { label: about.stackLabels.frontEnd, items: stack.frontEnd },
-    { label: about.stackLabels.backEnd, items: stack.backEnd },
-  ];
-
   return (
     <section id="about" className="bg-surface py-14 md:py-28">
       <Container className="grid gap-6 md:grid-cols-[2fr_7fr_3fr] md:gap-12">
@@ -26,9 +21,9 @@ export function About({ about }: { about: AboutCopy }) {
             {about.statement.text} <span className="text-accent-soft italic">{about.statement.accent}</span>
           </p>
           <div className="flex flex-col gap-4">
-            {groups.map((group) => (
-              <div key={group.label} className="flex flex-col gap-3 md:gap-4">
-                <p className="font-mono text-xs leading-none text-faint">{group.label}</p>
+            {stack.map((group) => (
+              <div key={group.id} className="flex flex-col gap-3 md:gap-4">
+                <p className="font-mono text-xs leading-none text-faint">{about.stackLabels[group.id]}</p>
                 <ul className="flex flex-wrap gap-2">
                   {group.items.map((item) => (
                     <li key={item.name}>

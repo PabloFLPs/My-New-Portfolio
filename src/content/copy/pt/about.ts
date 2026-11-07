@@ -6,7 +6,7 @@ export const about: AboutCopy = {
     text: "Curioso por natureza. Mergulho no que chama a minha atenção",
     accent: "até conseguir entregar algo real com isso.",
   },
-  stackLabels: { frontEnd: "front-end", backEnd: "back-end" },
+  stackLabels: { build: "desenvolvimento", data: "dados", ai: "engenharia de IA", ship: "entrega" },
   caption: "Engenheiro de Software · Belo Horizonte, MG",
   profileLink: "experiência no linkedin",
 };
