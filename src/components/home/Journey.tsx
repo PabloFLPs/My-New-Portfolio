@@ -64,7 +64,7 @@ export function Journey({ journey }: { journey: JourneyCopy }) {
                         {copy?.role}
                       </h3>
                       <p className="mt-3.5 text-sm leading-[1.4] text-accent-soft">{copy?.institution}</p>
-                      <p className="mt-3.5 font-mono text-[11px] leading-none text-faint lowercase">
+                      <p className="mt-3.5 font-mono text-[11px] leading-snug text-faint">
                         {journey.kinds[item.kind]}
                       </p>
                     </Entry>
@@ -91,6 +91,7 @@ export function Journey({ journey }: { journey: JourneyCopy }) {
                   </span>
                   <h3 className="font-serif text-[22px] leading-[1.2]">{copy?.role}</h3>
                   <p className="text-sm text-accent-soft">{copy?.institution}</p>
+                  <p className="font-mono text-[11px] leading-none text-faint">{journey.kinds[item.kind]}</p>
                 </div>
               </li>
             );

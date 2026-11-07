@@ -5,7 +5,13 @@ export const journey: JourneyCopy = {
   heading: { text: "From circuits", accent: "to code" },
   intro: "An electrotechnical start, a degree in Computer Engineering, and the roles in between.",
   now: "now",
-  kinds: { work: "work", education: "education", community: "community" },
+  kinds: {
+    technical: "technical course · high school",
+    internship: "internship",
+    degree: "bachelor's degree",
+    extension: "university extension · junior enterprise",
+    fullTime: "full-time",
+  },
   items: {
     electrotechnics: { role: "Electrotechnical Technician", institution: "CEFET-MG" },
     skill: { role: "IT Support", institution: "Skill Informática" },

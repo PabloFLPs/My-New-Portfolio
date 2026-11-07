@@ -6,7 +6,13 @@ export const journey: JourneyCopy = {
   intro:
     "Um começo na eletrotécnica, uma graduação em Engenharia de Computação e as experiências no meio do caminho.",
   now: "atual",
-  kinds: { work: "trabalho", education: "formação", community: "comunidade" },
+  kinds: {
+    technical: "técnico integrado ao ensino médio",
+    internship: "estágio",
+    degree: "bacharelado",
+    extension: "projeto de extensão · empresa júnior",
+    fullTime: "tempo integral",
+  },
   items: {
     electrotechnics: { role: "Técnico em Eletrotécnica", institution: "CEFET-MG" },
     skill: { role: "Suporte de TI", institution: "Skill Informática" },
