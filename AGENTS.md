@@ -100,6 +100,7 @@ npm run dev          # http://localhost:3000
 npm run check        # format:check + lint + typecheck + test — run before every commit
 npm run build        # production build; every page must stay static (○ or ●); the home pages show "1d"
 npm run format       # Prettier (sorts Tailwind classes too)
+npm run version:list # every version and the commit that made it
 ```
 
 ## Dependencies
@@ -114,7 +115,19 @@ npm run format       # Prettier (sorts Tailwind classes too)
 ## Commits
 
 Conventional Commits with a scope (`feat(work): …`, `fix(i18n): …`, `docs(agents): …`), one change per commit, each
-commit building and passing `npm run check`. Husky runs lint-staged on commit and commitlint on the message.
+commit building and passing `npm run check`, with the docs it affects updated in the same commit. Commits go
+straight to `master`, under `PabloFLPs <pablofelipe1999@hotmail.com>`, like Pablo's other repos; Husky runs
+lint-staged on commit and commitlint on the message.
+
+## Versioning (since 2026-11-12)
+
+Same scheme as Marksage. The version comes from the git history (`scripts/version.ts`): `feat` → minor, `fix` /
+`perf` → patch, other types don't change it; majors only at the commits in `MAJORS`, the portfolio's generations
+(1.x is the separate My-Portfolio-Page repo, 2.x the 2022 Create React App site, 3.x this rebuild). For every
+commit: `npm run version:next -- "<the commit message>"` before committing (writes `package.json`,
+`package-lock.json`'s two version fields and `CHANGELOG.md`; include them in the commit), then
+`npm run version:check` after it; CI runs the check too. Git tags only for the generations (`v2.0.0`, `v3.0.0`) and
+versions shown publicly (annotated; Pablo pushes them with `git push --tags`).
 
 ## Never
 

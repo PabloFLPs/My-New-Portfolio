@@ -42,6 +42,11 @@ Copy and data live in `src/content`, separate from the components that render th
 Tests keep both languages in sync: same shape, same numbers, no missing copy. The full map and conventions are in
 [AGENTS.md](AGENTS.md), written for AI agents and humans alike.
 
+## Versions
+
+The version is computed from the git history, the same way as in Marksage: `feat` → minor, `fix` → patch, and a
+major for each generation of the portfolio. See [CHANGELOG.md](CHANGELOG.md) or run `npm run version:list`.
+
 ## Deploy
 
 Vercel, with the **Next.js** framework preset and default build settings, on Node.js 26. No environment variables.

@@ -10,6 +10,11 @@ const eslintConfig = [
       "no-console": ["warn", { allow: ["warn", "error"] }],
     },
   },
+  {
+    // Command-line scripts report to the terminal.
+    files: ["scripts/**"],
+    rules: { "no-console": "off" },
+  },
   { ignores: [".next/**", "node_modules/**", "next-env.d.ts", "coverage/**"] },
 ];
 
