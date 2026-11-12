@@ -86,7 +86,7 @@ export function CaseStudyPage({ locale, slug }: { locale: Locale; slug: ProjectS
           <Container className="flex flex-col gap-14 py-14 md:gap-20 md:py-24">
             {study.sections.map((section) => (
               <Row key={section.heading} heading={section.heading}>
-                <CaseStudyBlocks blocks={section.blocks} />
+                <CaseStudyBlocks blocks={section.blocks} label={section.heading} />
               </Row>
             ))}
 

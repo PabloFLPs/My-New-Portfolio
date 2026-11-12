@@ -1,9 +1,15 @@
 import { type CaseStudyBlock } from "@/content/types/caseStudy";
 
-function Table({ block }: { block: Extract<CaseStudyBlock, { type: "table" }> }) {
+type TableBlock = Extract<CaseStudyBlock, { type: "table" }>;
+
+/**
+ * Scrolls sideways on phones. The scroll area is focusable and named after its section, so keyboard users can scroll
+ * it too (axe: scrollable-region-focusable).
+ */
+function Table({ block, label }: { block: TableBlock; label: string }) {
   const [first, ...rest] = block.columns;
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto" role="region" aria-label={label} tabIndex={0}>
       <table className="w-full min-w-[30rem] text-left">
         <thead className="font-mono text-[11px] tracking-[0.06em] text-faint uppercase">
           <tr className="border-b border-line">
@@ -39,7 +45,7 @@ function Table({ block }: { block: Extract<CaseStudyBlock, { type: "table" }> })
   );
 }
 
-function Block({ block }: { block: CaseStudyBlock }) {
+function Block({ block, label }: { block: CaseStudyBlock; label: string }) {
   switch (block.type) {
     case "paragraph":
       return <p className="text-base leading-[1.65] text-muted md:text-lg">{block.text}</p>;
@@ -57,7 +63,7 @@ function Block({ block }: { block: CaseStudyBlock }) {
         </ul>
       );
     case "table":
-      return <Table block={block} />;
+      return <Table block={block} label={label} />;
     case "entries":
       return (
         <ul className="flex flex-col border-b border-line">
@@ -75,7 +81,7 @@ function Block({ block }: { block: CaseStudyBlock }) {
   }
 }
 
-/** Renders a section's blocks in order: paragraphs, lists, a table, or named entries. */
-export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
-  return blocks.map((block, index) => <Block key={index} block={block} />);
+/** Renders a section's blocks in order: paragraphs, lists, a table, or named entries. `label` is the section heading. */
+export function CaseStudyBlocks({ blocks, label }: { blocks: CaseStudyBlock[]; label: string }) {
+  return blocks.map((block, index) => <Block key={index} block={block} label={label} />);
 }
