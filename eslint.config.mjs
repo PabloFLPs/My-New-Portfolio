@@ -15,7 +15,16 @@ const eslintConfig = [
     files: ["scripts/**"],
     rules: { "no-console": "off" },
   },
-  { ignores: [".next/**", "node_modules/**", "next-env.d.ts", "coverage/**"] },
+  {
+    ignores: [
+      ".next/**",
+      "node_modules/**",
+      "next-env.d.ts",
+      "coverage/**",
+      "test-results/**",
+      "playwright-report/**",
+    ],
+  },
 ];
 
 export default eslintConfig;

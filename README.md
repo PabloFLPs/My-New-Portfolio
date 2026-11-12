@@ -19,7 +19,7 @@ project: [Marksage](https://github.com/PabloFLPs/Marksage), [Zollama](https://gi
 - **Zod** to validate the DEV articles feed, refreshed daily with ISR
 - **next/og** for share images, one per page and language, drawn at build time in the site's own type
 - **Vercel Web Analytics**, cookieless (enable it in the project's Analytics tab)
-- **Vitest** for content and helper tests; **ESLint**, **Prettier**, **Husky**, **commitlint**; **Dependabot**
+- **Vitest** for content and helper tests; **Playwright** + **axe** for smoke tests; **ESLint**, **Prettier**, **Husky**, **commitlint**; **Dependabot**
 
 ## Run it
 
@@ -28,6 +28,7 @@ npm install
 npm run dev        # http://localhost:3000
 npm run check      # format, lint, typecheck and tests
 npm run build
+npm run test:e2e   # smoke tests against that build (first time: npx playwright install chromium)
 ```
 
 Node 24 or newer; `.nvmrc` pins 26, the current LTS and Vercel's default.
@@ -41,7 +42,9 @@ Copy and data live in `src/content`, separate from the components that render th
 - `components/home/` — one component per home section, composed in the order set by `content/sections.ts`
 - `components/case-study/` — one generic page, `/projects/[slug]`, built from each project's case study copy
 
-Tests keep both languages in sync: same shape, same numbers, no missing copy. The full map and conventions are in
+Tests keep both languages in sync: same shape, same numbers, no missing copy. Smoke tests open every page in both
+languages at 320, 390 and 1280 px and fail on sideways scrolling, browser errors, CSP violations and serious
+accessibility issues. The full map and conventions are in
 [AGENTS.md](AGENTS.md), written for AI agents and humans alike.
 
 ## Versions

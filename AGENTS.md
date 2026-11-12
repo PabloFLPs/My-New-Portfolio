@@ -61,6 +61,8 @@ src/
     og/                    share images: renderer, fonts (.woff from Fontsource), colour tokens mirrored from
                            globals.css (a test keeps them equal), and the per-locale factories the routes re-export
 public/images/             the hero photo
+e2e/                       Playwright smoke tests: `pages.ts` lists every page; smoke.spec (per page and width) and
+                           interactions.spec (phone menu, language switch, earlier projects, 404)
 ```
 
 ## How to…
@@ -84,6 +86,11 @@ public/images/             the hero photo
 - **Add a page:** add a path helper to `i18n/routes.ts`, create the route file under both `(en)` and `(pt)/pt-br`,
   use `pageMetadata()` for metadata, add an `opengraph-image.tsx` beside it (a factory in `lib/og/routes.tsx`), and
   add it to `app/sitemap.ts`.
+- **Run the smoke tests:** `npm run build && npm run test:e2e`. Each page, in both languages, at 320, 390 and
+  1280 px: status 200, one `h1`, the right `lang`, no sideways scrolling, no console errors, CSP violations or
+  failed requests, and no serious or critical axe findings (WCAG 2.2 AA). A new page is covered once it's in
+  `e2e/pages.ts`. Without network access to GitHub, set `E2E_OFFLINE=1` (stubs the avatar); to use a Chromium
+  already on the machine, `PLAYWRIGHT_CHROMIUM=<path>`.
 - **Change a colour token:** update `src/app/globals.css` and the same value in `lib/og/tokens.ts`; the test fails
   until both match.
 
@@ -108,6 +115,7 @@ Follows Pablo's PT-BR Writing Playbook (Obsidian vault, `_Playbooks/PT-BR Writin
 npm run dev          # http://localhost:3000
 npm run check        # format:check + lint + typecheck + test — run before every commit
 npm run build        # production build; every page must stay static (○ or ●); the home pages show "1d"
+npm run test:e2e     # Playwright smoke tests against that build (CI runs them after the build)
 npm run format       # Prettier (sorts Tailwind classes too)
 npm run version:list # every version and the commit that made it
 ```
