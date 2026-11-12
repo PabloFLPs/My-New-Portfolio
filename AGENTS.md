@@ -143,8 +143,8 @@ Same scheme as Marksage. The version comes from the git history (`scripts/versio
 (1.x is the separate My-Portfolio-Page repo, 2.x the 2022 Create React App site, 3.x this rebuild). For every
 commit: `npm run version:next -- "<the commit message>"` before committing (writes `package.json`,
 `package-lock.json`'s two version fields and `CHANGELOG.md`; include them in the commit), then
-`npm run version:check` after it; CI runs the check too. Git tags only for the generations (`v2.0.0`, `v3.0.0`) and
-versions shown publicly (annotated; Pablo pushes them with `git push --tags`).
+`npm run version:check` after it; CI runs the check too. No git tags: the version lives in `package.json` and
+`CHANGELOG.md`.
 
 ## Never
 
