@@ -2,6 +2,7 @@ import { FaDev, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { type IconType } from "react-icons";
 import { type FooterCopy } from "@/content/types/footer";
 import { site, socials, type SocialId } from "@/content/data/site";
+import { changelogUrl, version } from "@/content/data/version";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 
 const icons: Record<SocialId, IconType> = { linkedin: FaLinkedinIn, github: FaGithub, dev: FaDev };
@@ -14,6 +15,14 @@ export function SiteFooter({ footer }: { footer: FooterCopy }) {
           © {new Date().getFullYear()} pablo felipe ·{" "}
           <ExternalLink href={site.repo} className="transition-colors hover:text-accent-soft">
             {footer.source}
+          </ExternalLink>{" "}
+          ·{" "}
+          <ExternalLink
+            href={changelogUrl}
+            aria-label={footer.versionLink.replace("{version}", version)}
+            className="transition-colors hover:text-accent-soft"
+          >
+            v{version}
           </ExternalLink>
         </p>
         <ul className="flex items-center gap-1 md:gap-5">
