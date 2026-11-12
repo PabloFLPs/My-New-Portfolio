@@ -8,7 +8,7 @@ conventional commits, so 2.x stayed at 2.0.0. Dates: America/Sao_Paulo.
 
 ## 3.x — the editorial rebuild on Next.js, in English and Portuguese (2026)
 
-- **3.20.5** · 2026-11-12 · [`(this commit)`](https://github.com/PabloFLPs/My-New-Portfolio/commit/(this commit)) · fix(layout): ignore attributes browser extensions add to body
+- **3.20.5** · 2026-11-12 · [`ce7862d`](https://github.com/PabloFLPs/My-New-Portfolio/commit/ce7862d) · fix(layout): ignore attributes browser extensions add to body
 - **3.20.4** · 2026-11-12 · [`68cd8b3`](https://github.com/PabloFLPs/My-New-Portfolio/commit/68cd8b3) · fix(a11y): let keyboard users scroll case study tables
 - **3.20.3** · 2026-11-12 · [`fa907fe`](https://github.com/PabloFLPs/My-New-Portfolio/commit/fa907fe) · fix(case-study): keep wide tables from widening the page on phones
 - **3.20.2** · 2026-11-12 · [`01f3a49`](https://github.com/PabloFLPs/My-New-Portfolio/commit/01f3a49) · fix(a11y): start link names with the text on screen

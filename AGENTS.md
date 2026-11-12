@@ -133,7 +133,7 @@ npm run version:list # every version and the commit that made it
 
 Conventional Commits with a scope (`feat(work): …`, `fix(i18n): …`, `docs(agents): …`), one change per commit, each
 commit building and passing `npm run check`, with the docs it affects updated in the same commit. Commits go
-straight to `master`, under `PabloFLPs <pablofelipe1999@hotmail.com>`, like Pablo's other repos; Husky runs
+straight to `main`, under `PabloFLPs <pablofelipe1999@hotmail.com>`, like Pablo's other repos; Husky runs
 lint-staged on commit and commitlint on the message.
 
 ## Versioning (since 2026-11-12)
