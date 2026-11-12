@@ -5,7 +5,8 @@ Guidance for AI coding agents (and humans) working on this repo. Read it before 
 ## What this is
 
 A static, bilingual (EN + PT-BR) portfolio for Pablo Felipe, live at https://pablofelps.vercel.app. Every page is
-prerendered at build time; there is no backend, no database, no analytics and no form.
+prerendered at build time; there is no backend, no database, no analytics and no form. The one dynamic part is the
+Writing list, which the server fetches from DEV's public API and Vercel refreshes once a day (ISR).
 
 The visual design comes from an approved Claude Design session (Turn 3, "content + colour pass"): an editorial
 dark layout with serif display type, a warm taupe accent and numbered sections ("01 — About").
@@ -24,7 +25,8 @@ dark layout with serif display type, a warm taupe accent and numbered sections (
 - **Contact is LinkedIn only.** No email address, no form, anywhere on the site.
 - **No project screenshots.** Projects are presented in type only, in the site's own visual language; the hero
   photo and the GitHub avatar are the only images.
-- **No third-party requests at runtime** besides the GitHub avatar. Fonts are self-hosted via Fontsource.
+- **No third-party requests from the visitor's browser** besides the GitHub avatar. Fonts are self-hosted via
+  Fontsource. Server-side fetches (only DEV, today) validate the response with Zod and fall back to local data.
 - **Every hover effect that moves something uses a transform**, never padding or margin, so text never re-wraps.
 
 ## Map
@@ -50,7 +52,8 @@ src/
       caseStudies/         one file per project + `index.ts` with the labels shared by every case study
     content.test.ts        EN/PT parity, numbers, sentence length, PT-BR playbook terms, copy for every id
   i18n/                    locales, paths (homePath, projectPath, sectionHref), date formatting
-  lib/                     page metadata (hreflang, Open Graph), case study lookup and the [slug] route factory
+  lib/                     page metadata (hreflang, Open Graph), case study lookup and the [slug] route factory,
+                           devArticles (DEV feed: Zod validation, daily refresh, fallback)
 public/images/             the hero photo
 ```
 
@@ -67,7 +70,8 @@ public/images/             the hero photo
   timeline shows two rows of four; keep the count a multiple of 4 or adjust `rows` in `Journey.tsx`.
 - **Add a tool to the stack:** `content/data/stack.ts`, in the group it belongs to; give it a logo in
   `components/ui/ToolIcon.tsx` (react-icons `si` set) or it falls back to a neutral glyph.
-- **Add a post:** `content/data/writing.ts`, newest first. Titles stay in the language they were published in.
+- **Add a post:** nothing to do. Articles come from DEV (`lib/devArticles.ts`) and appear within a day. Refresh
+  `fallbackPosts` in `content/data/writing.ts` now and then; it's only used when DEV can't be reached.
 - **Add a home section:** create `components/home/<Name>.tsx`, its copy type in `content/types/`, copy in both
   locales, register it in `types/index.ts` and both `copy/*/index.ts`, add its id to `content/sections.ts` and to
   the `sections` map in `HomePage.tsx`.
@@ -94,9 +98,18 @@ Follows Pablo's PT-BR Writing Playbook (Obsidian vault, `_Playbooks/PT-BR Writin
 ```bash
 npm run dev          # http://localhost:3000
 npm run check        # format:check + lint + typecheck + test — run before every commit
-npm run build        # production build; every page must stay static (○ or ●)
+npm run build        # production build; every page must stay static (○ or ●); the home pages show "1d"
 npm run format       # Prettier (sorts Tailwind classes too)
 ```
+
+## Dependencies
+
+- Node.js: `.nvmrc` pins 26 (current LTS, Vercel's default); `engines` accepts 24+.
+- Dependabot opens a grouped minor/patch pull request every Monday; CI must pass before merging.
+- Held back on purpose: **ESLint 10** (eslint-plugin-react, -import and -jsx-a11y inside eslint-config-next don't
+  support it yet) and **TypeScript 7** (typescript-eslint supports up to 6.0). Revisit when those ship support.
+- `overrides.@typescript-eslint/typescript-estree.minimatch` in `package.json` patches a dev-only advisory
+  (GHSA-g3hv-75wg-m249). Remove it once typescript-eslint depends on minimatch 11.
 
 ## Commits
 

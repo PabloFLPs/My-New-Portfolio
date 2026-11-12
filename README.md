@@ -16,7 +16,8 @@ project: [Marksage](https://github.com/PabloFLPs/Marksage), [Zollama](https://gi
 - **React 19**, **TypeScript** (strict)
 - **Tailwind CSS 4**, with the design tokens in `src/app/globals.css`
 - **Newsreader**, **Hanken Grotesk** and **JetBrains Mono**, self-hosted via Fontsource
-- **Vitest** for content and helper tests; **ESLint**, **Prettier**, **Husky**, **commitlint**
+- **Zod** to validate the DEV articles feed, refreshed daily with ISR
+- **Vitest** for content and helper tests; **ESLint**, **Prettier**, **Husky**, **commitlint**; **Dependabot**
 
 ## Run it
 
@@ -43,4 +44,5 @@ Tests keep both languages in sync: same shape, same numbers, no missing copy. Th
 
 ## Deploy
 
-Vercel, with the **Next.js** framework preset and default build settings. No environment variables.
+Vercel, with the **Next.js** framework preset and default build settings, on Node.js 26. No environment variables.
+New DEV articles appear on the site within a day without a deploy.
