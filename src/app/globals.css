@@ -1,0 +1,83 @@
+@import "@fontsource-variable/newsreader/opsz.css";
+@import "@fontsource-variable/newsreader/opsz-italic.css";
+@import "@fontsource-variable/hanken-grotesk";
+@import "@fontsource-variable/jetbrains-mono";
+@import "tailwindcss";
+
+/*
+ * Design tokens from the approved Claude Design session (Turn 3, "content + colour pass").
+ * Components use these names only; never raw hex values or default Tailwind hues.
+ */
+@theme {
+  --font-serif: "Newsreader Variable", ui-serif, Georgia, serif;
+  --font-sans: "Hanken Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, monospace;
+
+  /* Surfaces */
+  --color-canvas: #181719; /* page background */
+  --color-surface: #1f1f1f; /* alternating bands, image slots, footer */
+  --color-raised: #2a282b; /* hover on surfaces */
+
+  /* Lines */
+  --color-line: #2a282b; /* row separators */
+  --color-line-strong: #333034; /* chips, outlined buttons */
+  --color-rail: #3a373b; /* timeline rail */
+
+  /* Text */
+  --color-ink: #ece8e2; /* primary */
+  --color-ink-soft: #c9c3bb; /* lead paragraphs, nav */
+  --color-muted: #a39d95; /* body copy */
+  --color-faint: #8f887f; /* captions, mono metadata — the dimmest text colour; keeps 4.5:1 on surface */
+
+  /* Accent (warm taupe) */
+  --color-accent: #8c7d6b; /* display italics, rules, timeline dots */
+  --color-accent-soft: #b8aa96; /* small accent text, labels */
+  --color-button: #a39684; /* primary button, with canvas-coloured text */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-accent) 60%, transparent);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-soft);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  p,
+  li,
+  h1,
+  h2,
+  h3 {
+    text-wrap: pretty;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

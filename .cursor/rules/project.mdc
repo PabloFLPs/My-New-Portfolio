@@ -1,0 +1,16 @@
+---
+description: Project rules for the portfolio — always on
+alwaysApply: true
+---
+
+Follow AGENTS.md at the repo root; it is the source of truth. The essentials:
+
+- All user-facing text lives in `src/content/copy/{en,pt}`; components receive copy as props.
+- Change EN and PT-BR together. EN is the source of truth for facts; PT-BR follows the PT-BR Writing Playbook
+  summarised in AGENTS.md.
+- Use only the design tokens from `src/app/globals.css` (`canvas`, `surface`, `ink`, `muted`, `accent`,
+  `accent-soft`, `font-serif`, `font-mono`…). No raw hex values or default Tailwind hues.
+- External links use `components/ui/ExternalLink`.
+- Contact is LinkedIn only (no email, no form). No project screenshots: projects are presented in type only.
+- Never invent metrics, roles or dates; ask.
+- Run `npm run check` and `npm run build` before committing. Conventional Commits with a scope.
