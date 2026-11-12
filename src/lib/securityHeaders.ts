@@ -1,7 +1,7 @@
 /**
  * HTTP security headers for every response. The Content-Security-Policy only allows this origin: fonts are
- * self-hosted, the avatar goes through Next's image optimizer, and Vercel Web Analytics loads from
- * `/_vercel/insights`. Static pages can't carry per-request nonces, so inline scripts (Next's page data) and
+ * self-hosted, the avatar goes through Next's image optimizer, and Vercel Web Analytics loads from and reports to
+ * `/_vercel/insights` on this origin. Static pages can't carry per-request nonces, so inline scripts (Next's page data) and
  * inline styles (next/image) are allowed; no other origin can run code here.
  */
 type Environment = { production: boolean; vercelPreview: boolean };
@@ -9,11 +9,11 @@ type Environment = { production: boolean; vercelPreview: boolean };
 export function contentSecurityPolicy({ production, vercelPreview }: Environment): string {
   // Vercel's toolbar runs on preview deployments only.
   const toolbar = vercelPreview ? " https://vercel.live" : "";
-  // React's dev tooling evaluates code; production never does.
-  const devEval = production ? "" : " 'unsafe-eval'";
+  // React's dev tooling evaluates code, and Vercel Analytics' debug script loads from its CDN; production does neither.
+  const devScripts = production ? "" : " 'unsafe-eval' https://va.vercel-scripts.com";
   return [
     "default-src 'self'",
-    `script-src 'self' 'unsafe-inline'${devEval}${toolbar}`,
+    `script-src 'self' 'unsafe-inline'${devScripts}${toolbar}`,
     `style-src 'self' 'unsafe-inline'${toolbar}`,
     `img-src 'self' data: blob:${toolbar}`,
     `font-src 'self'${toolbar}`,

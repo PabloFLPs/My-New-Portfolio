@@ -5,7 +5,8 @@ Guidance for AI coding agents (and humans) working on this repo. Read it before 
 ## What this is
 
 A static, bilingual (EN + PT-BR) portfolio for Pablo Felipe, live at https://pablofelps.vercel.app. Every page is
-prerendered at build time; there is no backend, no database, no analytics and no form. The one dynamic part is the
+prerendered at build time; there is no backend, no database and no form. Analytics is Vercel Web Analytics:
+cookieless, no personal data, served from this origin, and only rendered on Vercel. The one dynamic part is the
 Writing list, which the server fetches from DEV's public API and Vercel refreshes once a day (ISR).
 
 The visual design comes from an approved Claude Design session (Turn 3, "content + colour pass"): an editorial
