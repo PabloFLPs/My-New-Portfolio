@@ -1,4 +1,4 @@
-/** Articles on DEV. Titles stay in the language they were published in. */
+/** An article on DEV. Titles stay in the language they were published in. */
 export type Post = {
   title: string;
   /** ISO date, YYYY-MM-DD. */
@@ -19,8 +19,11 @@ export const contextEngineeringArticle: Post = {
   lang: "en",
 };
 
-/** Newest first. */
-export const posts: Post[] = [
+/**
+ * Shown when DEV can't be reached. The live list comes from DEV's API (see `lib/devArticles.ts`), so a new
+ * article needs no change here; refresh this list now and then so the fallback isn't too far behind. Newest first.
+ */
+export const fallbackPosts: Post[] = [
   contextEngineeringArticle,
   {
     title: "Difference Between Two Arrays in JavaScript",

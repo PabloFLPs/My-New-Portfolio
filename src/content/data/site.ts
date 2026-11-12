@@ -4,6 +4,8 @@ export const site = {
   url: "https://pablofelps.vercel.app",
   avatar: "https://avatars.githubusercontent.com/u/58035837?v=4",
   repo: "https://github.com/PabloFLPs/My-New-Portfolio",
+  /** Username on DEV, where the Writing section's articles come from. */
+  devUsername: "pablofelps",
   links: {
     linkedin: "https://www.linkedin.com/in/pablo-felipe-lnkdn/",
     github: "https://github.com/PabloFLPs",

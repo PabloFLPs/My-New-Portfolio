@@ -1,5 +1,5 @@
 import { type WritingCopy } from "@/content/types/writing";
-import { posts } from "@/content/data/writing";
+import { type Post } from "@/content/data/writing";
 import { site } from "@/content/data/site";
 import { sectionNumber } from "@/content/sections";
 import { formatDate } from "@/i18n/format";
@@ -10,7 +10,7 @@ import { ExternalLink } from "@/components/ui/ExternalLink";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { UnderlineLink } from "@/components/ui/UnderlineLink";
 
-export function Writing({ writing, locale }: { writing: WritingCopy; locale: Locale }) {
+export function Writing({ writing, locale, posts }: { writing: WritingCopy; locale: Locale; posts: Post[] }) {
   return (
     <section id="writing" className="pt-14 md:pt-28">
       <Container className="grid gap-5 md:grid-cols-[4fr_8fr] md:gap-16">
