@@ -7,7 +7,7 @@ export const ogColors = {
   line: "#2a282b",
   ink: "#ece8e2",
   muted: "#a39d95",
-  faint: "#7d776f",
+  faint: "#8f887f",
   accent: "#8c7d6b",
   "accent-soft": "#b8aa96",
 } as const;

@@ -27,7 +27,7 @@
   --color-ink: #ece8e2; /* primary */
   --color-ink-soft: #c9c3bb; /* lead paragraphs, nav */
   --color-muted: #a39d95; /* body copy */
-  --color-faint: #7d776f; /* captions, mono metadata */
+  --color-faint: #8f887f; /* captions, mono metadata — the dimmest text colour; keeps 4.5:1 on surface */
 
   /* Accent (warm taupe) */
   --color-accent: #8c7d6b; /* display italics, rules, timeline dots */
