@@ -8,7 +8,8 @@ conventional commits, so 2.x stayed at 2.0.0. Dates: America/Sao_Paulo.
 
 ## 3.x — the editorial rebuild on Next.js, in English and Portuguese (2026)
 
-- **3.20.2** · 2026-11-12 · [`(this commit)`](https://github.com/PabloFLPs/My-New-Portfolio/commit/(this commit)) · fix(a11y): start link names with the text on screen
+- **3.20.3** · 2026-11-12 · [`(this commit)`](https://github.com/PabloFLPs/My-New-Portfolio/commit/(this commit)) · fix(case-study): keep wide tables from widening the page on phones
+- **3.20.2** · 2026-11-12 · [`01f3a49`](https://github.com/PabloFLPs/My-New-Portfolio/commit/01f3a49) · fix(a11y): start link names with the text on screen
 - **3.20.1** · 2026-11-12 · [`50f04ac`](https://github.com/PabloFLPs/My-New-Portfolio/commit/50f04ac) · fix(a11y): lift the faint text colour to 4.5:1 contrast
 - **3.20.0** · 2026-11-12 · [`586da77`](https://github.com/PabloFLPs/My-New-Portfolio/commit/586da77) · feat(meta): add share images for every page, in the site's own type
 - **3.19.0** · 2026-11-12 · [`d210d97`](https://github.com/PabloFLPs/My-New-Portfolio/commit/d210d97) · feat(analytics): add Vercel Web Analytics, cookieless and first-party

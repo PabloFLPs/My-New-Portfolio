@@ -13,10 +13,13 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { UnderlineLink } from "@/components/ui/UnderlineLink";
 import { CaseStudyBlocks } from "./CaseStudyBlocks";
 
-/** One editorial row: heading on the left, body on the right (stacked on phones). */
+/**
+ * One editorial row: heading on the left, body on the right (stacked on phones). `grid-cols-1` (minmax(0, 1fr)) keeps
+ * a wide table inside its own scroll area instead of widening the page.
+ */
 function Row({ heading, children }: { heading: string; children: ReactNode }) {
   return (
-    <section className="grid gap-5 border-t border-line pt-10 md:grid-cols-[4fr_8fr] md:gap-16">
+    <section className="grid grid-cols-1 gap-5 border-t border-line pt-10 md:grid-cols-[4fr_8fr] md:gap-16">
       <h2 className="font-serif text-[28px] leading-tight md:text-[34px]">{heading}</h2>
       <div className="flex flex-col gap-5">{children}</div>
     </section>
