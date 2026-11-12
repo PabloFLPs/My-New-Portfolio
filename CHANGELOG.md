@@ -8,7 +8,8 @@ conventional commits, so 2.x stayed at 2.0.0. Dates: America/Sao_Paulo.
 
 ## 3.x — the editorial rebuild on Next.js, in English and Portuguese (2026)
 
-- **3.19.0** · 2026-11-12 · [`(this commit)`](https://github.com/PabloFLPs/My-New-Portfolio/commit/(this commit)) · feat(analytics): add Vercel Web Analytics, cookieless and first-party
+- **3.20.0** · 2026-11-12 · [`(this commit)`](https://github.com/PabloFLPs/My-New-Portfolio/commit/(this commit)) · feat(meta): add share images for every page, in the site's own type
+- **3.19.0** · 2026-11-12 · [`d210d97`](https://github.com/PabloFLPs/My-New-Portfolio/commit/d210d97) · feat(analytics): add Vercel Web Analytics, cookieless and first-party
 - **3.18.1** · 2026-11-12 · [`7f2cd78`](https://github.com/PabloFLPs/My-New-Portfolio/commit/7f2cd78) · fix(security): a Content-Security-Policy and security headers on every page
 - **3.18.0** · 2026-11-12 · [`ee15e62`](https://github.com/PabloFLPs/My-New-Portfolio/commit/ee15e62) · feat(footer): show the version, linked to the changelog
 - **3.17.0** · 2026-11-12 · [`19f6278`](https://github.com/PabloFLPs/My-New-Portfolio/commit/19f6278) · feat(writing): load articles from DEV automatically, refreshed daily

@@ -29,6 +29,8 @@ export type CaseStudyLabels = {
   readCode: string;
   lessons: string;
   more: string;
+  /** Alt text of a case study's share image, after the name: "Pablo Felipe — Case study". */
+  shareImageAlt: string;
 };
 
 export type CaseStudiesCopy = {

@@ -4,7 +4,10 @@ import { type MetaCopy } from "@/content/types/shared";
 import { htmlLang, locales, ogLocale, type Locale } from "@/i18n/locales";
 import { type LocalizedPaths } from "@/i18n/routes";
 
-/** Title, description, canonical URL, hreflang alternates and social cards for one page. */
+/**
+ * Title, description, canonical URL, hreflang alternates and social cards for one page. The card image comes from the
+ * route's `opengraph-image.tsx` (see `lib/og`), which Next adds on its own.
+ */
 export function pageMetadata(paths: LocalizedPaths, locale: Locale, copy: MetaCopy): Metadata {
   const path = paths[locale];
   const languages = Object.fromEntries(locales.map((l) => [htmlLang[l], paths[l]]));
@@ -21,9 +24,8 @@ export function pageMetadata(paths: LocalizedPaths, locale: Locale, copy: MetaCo
       title: copy.title,
       description: copy.description,
       locale: ogLocale[locale],
-      images: [{ url: site.avatar, width: 460, height: 460, alt: site.name }],
     },
-    twitter: { card: "summary", title: copy.title, description: copy.description, images: [site.avatar] },
+    twitter: { card: "summary_large_image", title: copy.title, description: copy.description },
   };
 }
 

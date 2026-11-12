@@ -17,6 +17,7 @@ project: [Marksage](https://github.com/PabloFLPs/Marksage), [Zollama](https://gi
 - **Tailwind CSS 4**, with the design tokens in `src/app/globals.css`
 - **Newsreader**, **Hanken Grotesk** and **JetBrains Mono**, self-hosted via Fontsource
 - **Zod** to validate the DEV articles feed, refreshed daily with ISR
+- **next/og** for share images, one per page and language, drawn at build time in the site's own type
 - **Vercel Web Analytics**, cookieless (enable it in the project's Analytics tab)
 - **Vitest** for content and helper tests; **ESLint**, **Prettier**, **Husky**, **commitlint**; **Dependabot**
 

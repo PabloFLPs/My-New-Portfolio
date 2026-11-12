@@ -1,6 +1,6 @@
 {
   "name": "my-new-portfolio",
-  "version": "3.19.0",
+  "version": "3.20.0",
   "private": true,
   "description": "Pablo Felipe's portfolio, in English and Brazilian Portuguese.",
   "type": "module",
@@ -37,6 +37,9 @@
   "devDependencies": {
     "@commitlint/cli": "^21.2.4",
     "@commitlint/config-conventional": "^21.2.4",
+    "@fontsource/hanken-grotesk": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/newsreader": "^5.3.0",
     "@tailwindcss/postcss": "^4.3.5",
     "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",

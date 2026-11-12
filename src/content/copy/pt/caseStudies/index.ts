@@ -11,6 +11,7 @@ export const caseStudies: CaseStudiesCopy = {
     readCode: "Ler o código",
     lessons: "O que levei disso",
     more: "Quer todos os detalhes?",
+    shareImageAlt: "Estudo de caso",
   },
   studies: { marksage, zollama, loreforge, "route-flyover-studio": routeFlyoverStudio },
 };

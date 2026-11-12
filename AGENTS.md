@@ -25,7 +25,8 @@ dark layout with serif display type, a warm taupe accent and numbered sections (
   `ink`, `muted`, `accent`, `accent-soft`, `font-serif`…). No raw hex values or default Tailwind hues in components.
 - **Contact is LinkedIn only.** No email address, no form, anywhere on the site.
 - **No project screenshots.** Projects are presented in type only, in the site's own visual language; the hero
-  photo and the GitHub avatar are the only images.
+  photo and the GitHub avatar are the only images. Share images (`opengraph-image.tsx` next to each page, drawn by
+  `lib/og`) are type-only too, generated at build time in the site's tokens and fonts.
 - **No third-party requests from the visitor's browser.** Fonts are self-hosted via Fontsource, and the GitHub avatar
   goes through Next's image optimizer, so it's served from this origin. The Content-Security-Policy
   (`lib/securityHeaders.ts`) enforces it: a new origin needs a deliberate change there. Server-side fetches (only DEV,
@@ -57,6 +58,8 @@ src/
   i18n/                    locales, paths (homePath, projectPath, sectionHref), date formatting
   lib/                     page metadata (hreflang, Open Graph), case study lookup and the [slug] route factory,
                            devArticles (DEV feed: Zod validation, daily refresh, fallback), securityHeaders (CSP)
+    og/                    share images: renderer, fonts (.woff from Fontsource), colour tokens mirrored from
+                           globals.css (a test keeps them equal), and the per-locale factories the routes re-export
 public/images/             the hero photo
 ```
 
@@ -79,7 +82,10 @@ public/images/             the hero photo
   locales, register it in `types/index.ts` and both `copy/*/index.ts`, add its id to `content/sections.ts` and to
   the `sections` map in `HomePage.tsx`.
 - **Add a page:** add a path helper to `i18n/routes.ts`, create the route file under both `(en)` and `(pt)/pt-br`,
-  use `pageMetadata()` for metadata, and add it to `app/sitemap.ts`.
+  use `pageMetadata()` for metadata, add an `opengraph-image.tsx` beside it (a factory in `lib/og/routes.tsx`), and
+  add it to `app/sitemap.ts`.
+- **Change a colour token:** update `src/app/globals.css` and the same value in `lib/og/tokens.ts`; the test fails
+  until both match.
 
 ## PT-BR voice
 
