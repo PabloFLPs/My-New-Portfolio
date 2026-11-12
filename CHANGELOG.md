@@ -8,7 +8,8 @@ conventional commits, so 2.x stayed at 2.0.0. Dates: America/Sao_Paulo.
 
 ## 3.x — the editorial rebuild on Next.js, in English and Portuguese (2026)
 
-- **3.18.0** · 2026-11-12 · [`(this commit)`](https://github.com/PabloFLPs/My-New-Portfolio/commit/(this commit)) · feat(footer): show the version, linked to the changelog
+- **3.18.1** · 2026-11-12 · [`(this commit)`](https://github.com/PabloFLPs/My-New-Portfolio/commit/(this commit)) · fix(security): a Content-Security-Policy and security headers on every page
+- **3.18.0** · 2026-11-12 · [`ee15e62`](https://github.com/PabloFLPs/My-New-Portfolio/commit/ee15e62) · feat(footer): show the version, linked to the changelog
 - **3.17.0** · 2026-11-12 · [`19f6278`](https://github.com/PabloFLPs/My-New-Portfolio/commit/19f6278) · feat(writing): load articles from DEV automatically, refreshed daily
 - **3.16.0** · 2026-11-07 · [`3ae99e6`](https://github.com/PabloFLPs/My-New-Portfolio/commit/3ae99e6) · feat(contact): make LinkedIn the only contact channel
 - **3.15.2** · 2026-11-07 · [`2cb7f99`](https://github.com/PabloFLPs/My-New-Portfolio/commit/2cb7f99) · fix(writing): stop list rows re-wrapping on hover

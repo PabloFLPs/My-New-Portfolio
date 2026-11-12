@@ -25,8 +25,10 @@ dark layout with serif display type, a warm taupe accent and numbered sections (
 - **Contact is LinkedIn only.** No email address, no form, anywhere on the site.
 - **No project screenshots.** Projects are presented in type only, in the site's own visual language; the hero
   photo and the GitHub avatar are the only images.
-- **No third-party requests from the visitor's browser** besides the GitHub avatar. Fonts are self-hosted via
-  Fontsource. Server-side fetches (only DEV, today) validate the response with Zod and fall back to local data.
+- **No third-party requests from the visitor's browser.** Fonts are self-hosted via Fontsource, and the GitHub avatar
+  goes through Next's image optimizer, so it's served from this origin. The Content-Security-Policy
+  (`lib/securityHeaders.ts`) enforces it: a new origin needs a deliberate change there. Server-side fetches (only DEV,
+  today) validate the response with Zod and fall back to local data.
 - **Every hover effect that moves something uses a transform**, never padding or margin, so text never re-wraps.
 
 ## Map
@@ -53,7 +55,7 @@ src/
     content.test.ts        EN/PT parity, numbers, sentence length, PT-BR playbook terms, copy for every id
   i18n/                    locales, paths (homePath, projectPath, sectionHref), date formatting
   lib/                     page metadata (hreflang, Open Graph), case study lookup and the [slug] route factory,
-                           devArticles (DEV feed: Zod validation, daily refresh, fallback)
+                           devArticles (DEV feed: Zod validation, daily refresh, fallback), securityHeaders (CSP)
 public/images/             the hero photo
 ```
 
