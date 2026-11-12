@@ -1,5 +1,5 @@
 export type FooterCopy = {
   source: string;
-  /** Accessible name of the version link; `{version}` is replaced. */
-  versionLink: string;
+  /** Read by screen readers after the visible "v3.x.y", which is a link to the changelog. */
+  changelog: string;
 };

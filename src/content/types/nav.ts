@@ -3,7 +3,7 @@ export type NavCopy = {
   links: { about: string; work: string; journey: string; contact: string };
   menu: string;
   close: string;
-  /** Accessible name of the language switch, in the target language. */
+  /** Read by screen readers after the short code, and shown as the tooltip; in the target language. */
   switchLanguage: string;
   /** Short code of the other language, shown on the switch. */
   switchLanguageShort: string;

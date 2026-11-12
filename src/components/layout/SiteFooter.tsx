@@ -17,12 +17,9 @@ export function SiteFooter({ footer }: { footer: FooterCopy }) {
             {footer.source}
           </ExternalLink>{" "}
           ·{" "}
-          <ExternalLink
-            href={changelogUrl}
-            aria-label={footer.versionLink.replace("{version}", version)}
-            className="transition-colors hover:text-accent-soft"
-          >
+          <ExternalLink href={changelogUrl} className="transition-colors hover:text-accent-soft">
             v{version}
+            <span className="sr-only">, {footer.changelog}</span>
           </ExternalLink>
         </p>
         <ul className="flex items-center gap-1 md:gap-5">
