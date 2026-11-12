@@ -27,7 +27,7 @@ npm run check      # format, lint, typecheck and tests
 npm run build
 ```
 
-Node 20.9 or newer (`.nvmrc` pins 22).
+Node 24 or newer; `.nvmrc` pins 26, the current LTS and Vercel's default.
 
 ## How it's organized
 
